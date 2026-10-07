@@ -201,6 +201,13 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .cf .sig{top:680px}
 @media (max-width:640px){#endcta .cc .btn{min-height:40px;padding:0 15px}#endcta .cc .btn.primary{padding:0 18px}#endcta .cc{gap:8px}}
 @media (max-height:520px){#endcta .box{display:none}#endcta{margin-top:10px;gap:8px}}
+#savebar{position:fixed;left:calc(16px + env(safe-area-inset-left,0px));top:calc(16px + env(safe-area-inset-top,0px));display:flex;gap:8px;z-index:4}
+#savebar .btn{min-height:40px;padding:0 15px;font-size:14px;gap:7px;text-decoration:none}
+#savebar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+#toast{position:fixed;left:50%;top:calc(66px + env(safe-area-inset-top,0px));transform:translate(-50%,-8px);padding:10px 18px;border-radius:999px;background:#25282c;color:#fff;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;z-index:6;white-space:nowrap}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:480px){#savebar .btn{padding:0 12px;font-size:13px;gap:6px}#top .btn{padding:0 11px;font-size:13px}}
+@media (max-width:400px){#savebar .btn{width:40px;padding:0}#savebar .btn span{display:none}}
 </style>
 
 
@@ -238,6 +245,11 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 <div id="backdrop"></div>
 
 <div id="ui">
+  <div id="savebar">
+    <button class="btn" id="shareB" type="button" aria-label="Share this folder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M7.5 7.5L12 3l4.5 4.5M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg><span>Share</span></button>
+    <a class="btn" id="dlB" href="folder.pdf" download="1108 Salado Dr - Listing Folder.pdf" target="_blank" rel="noopener" aria-label="Download the folder as a PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 10.5L12 15l4.5-4.5M5 19h14"/></svg><span>Save</span></a>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
   <div id="top">
     <button class="btn hide" id="flipB" type="button">Flip over</button>
     <button class="btn hide" id="fullB" type="button">View full size</button>
@@ -626,6 +638,20 @@ function openReader(){
 $('#fullB').onclick=openReader;
 $('#readerClose').onclick=()=>$('#reader').classList.remove('on');
 
+/* ---------- share / save ---------- */
+const toast=$('#toast'); let toastT=null;
+function say(msg){ toast.textContent=msg; toast.classList.add('on'); clearTimeout(toastT); toastT=setTimeout(()=>toast.classList.remove('on'),2400); }
+function copyText(t){
+  if(navigator.clipboard&&navigator.clipboard.writeText) return navigator.clipboard.writeText(t);
+  return new Promise((ok,no)=>{ try{ const a=document.createElement('textarea'); a.value=t; a.style.cssText='position:fixed;opacity:0'; document.body.appendChild(a); a.select(); const r=document.execCommand('copy'); a.remove(); r?ok():no(); }catch(e){no(e)} });
+}
+$('#shareB').onclick=async()=>{
+  const url=location.href.split('#')[0], title='1108 Salado Dr, Allen, TX 75013', text='Take a look inside the listing folder for 1108 Salado Dr.';
+  if(navigator.share){ try{ await navigator.share({title,text,url}); return; }catch(e){ if(e&&e.name==='AbortError') return; } }
+  try{ await copyText(url); say('Link copied. Paste it anywhere to share.'); }catch(e){ say('Copy the link from your address bar to share.'); }
+};
+$('#dlB').addEventListener('click',()=>say('Saving the folder as a PDF...'));
+
 /* ---------- misc ---------- */
 addEventListener('keydown',e=>{
   if(e.key==='Escape'){ if($('#reader').classList.contains('on')) $('#reader').classList.remove('on'); else unfocus(); }
@@ -641,7 +667,7 @@ addEventListener('pointermove',e=>{
 });
 addEventListener('resize',()=>{ setPerspective(); stage.classList.add('inst'); applyCam(cur); void stage.offsetWidth; requestAnimationFrame(()=>stage.classList.remove('inst')); });
 
-if(window.top!==window.self){ document.querySelectorAll('#contact a,#endcta a').forEach(a=>{a.target='_blank';a.rel='noopener'}); }
+if(window.top!==window.self){ document.querySelectorAll('#contact a,#endcta a,#dlB').forEach(a=>{a.target='_blank';a.rel='noopener'}); }
 setPerspective(); setPP();
 apply(SC[0],true);
 window.__dbg={go,SC,items,apply,get cur(){return cur}};

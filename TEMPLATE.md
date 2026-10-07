@@ -13,11 +13,15 @@ It was built from the 1108 Salado Dr folder, so that listing's details are what 
    - Agent business card (left pocket): "Your Brokerage", Jonathan Realtor, Real Estate Agent, License #12345, (555) 555-5555, jonathan.realtor@example.com, www.example.com, initials "JR"
    - Agent CTA buttons at the end: `tel:+15555555555`, `sms:+15555555555`, `mailto:jonathan.realtor@example.com`
    - Home highlights caption: bedrooms, baths, square feet, features
+   - Save button: the `download="..."` name on `#dlB` ("1108 Salado Dr - Listing Folder.pdf"), and the share text/title in the `#shareB` handler
    - Flyer images (data URIs in `const IMG`): `neigh` (Neighborhood highlights), `home` (Home highlights), `num` (The Numbers), `w53` / `w5` / `w20` (three pre-application worksheets)
 3. Constant for every folder (leave alone): the two trifolds (`proc1`, `proc2`, `high1`, `high2`), the Highlands logo, Devin's business card, Devin's contact buttons.
-4. Commit and push. The link is `devinkampa.com/folder/<address-slug>/`.
+4. Rebuild the downloadable PDF: `python3 tools/make_pdf.py <address-slug> "<Address> - Listing Folder"` (needs `pip install img2pdf`). This writes `<address-slug>/folder.pdf`, which the Save button downloads.
+5. Commit and push. The link is `devinkampa.com/folder/<address-slug>/`.
 
 ## Behavior
 - Cover tap or "Open the folder" starts a guided tour: Neighborhood, Home, The Numbers, the two trifolds (inside and outside). The three worksheets are skipped in the tour.
 - When the folder is fully open the tour ends. Tapping any worksheet lifts all three side by side. "Close folder" returns to the closed cover.
 - Page is `noindex`.
+
+- Share button: opens the phone's share sheet (or copies the link on desktop). Save button: downloads `folder.pdf`, one Letter page per flyer.
