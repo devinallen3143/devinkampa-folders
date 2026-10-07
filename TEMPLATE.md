@@ -14,6 +14,8 @@ It was built from the 1108 Salado Dr folder, so that listing's details are what 
    - Agent CTA buttons at the end: `tel:+15555555555`, `sms:+15555555555`, `mailto:jonathan.realtor@example.com`
    - Home highlights caption: bedrooms, baths, square feet, features
    - Save button: the `download="..."` name on `#dlB` ("1108 Salado Dr - Listing Folder.pdf"), and the share text/title in the `#shareB` handler
+   - Cover: highlight photo (the most appealing listing photo, usually the front exterior; crop to 880x428 JPEG and add as `IMG.cover`), address on one line (no "Listing folder" line), then a small "Prepared for" line with the agent's name and "Title · Brokerage · License #"
+   - Inside cards are titled "The listing agent's business card" and "The loan officer's business card"; end CTAs are "Call agent" and "Call lender"
    - Flyer images (data URIs in `const IMG`): `neigh` (Neighborhood highlights), `home` (Home highlights), `num` (The Numbers), `w53` / `w5` / `w20` (pre-application worksheets: 5% down + 3% seller credit, 5% down, 20% down). Include only the keys the listing has (1, 2 or 3); delete the others from `IMG`. The folder, the worksheet lift, the scene captions and "The numbers" caption adapt automatically, and `tools/make_pdf.py` skips missing keys
 3. Constant for every folder (leave alone): the two trifolds (`proc1`, `proc2`, `high1`, `high2`), the Highlands logo, Devin's business card, Devin's contact buttons.
 4. Rebuild the downloadable PDF: `python3 tools/make_pdf.py <address-slug> "<Address> - Listing Folder"` (needs `pip install img2pdf`). This writes `<address-slug>/folder.pdf`, which the Save button downloads.
