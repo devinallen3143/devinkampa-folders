@@ -1,2 +1,2 @@
 # devinkampa-folders
-Listing folders served at devinkampa.com/folders/
+Listing folders served at devinkampa.com/folder/
