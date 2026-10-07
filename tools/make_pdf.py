@@ -22,7 +22,7 @@ def layout(w, h, ndpi):
 
 tmp = tempfile.mkdtemp()
 files = []
-for k in ORDER:
+for k in [k for k in ORDER if k in IMG]:
     head, b64 = IMG[k].split(',', 1)
     f = os.path.join(tmp, k + ('.jpg' if 'jpeg' in head else '.png'))
     open(f, 'wb').write(base64.b64decode(b64))
