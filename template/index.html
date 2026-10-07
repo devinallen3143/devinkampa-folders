@@ -382,9 +382,10 @@ function paperCopies(parent,key,cx,cy,list){
 /* Left pocket: Neighborhood (back) + Home highlights (front). Right pocket: three breakdowns in back, The Numbers in front of them, then the two trifold stacks in front. */
 paper('neigh','L','neigh',{x:-338,y:-20,z:2,rz:-1.8},-300);
 paper('home','L','home',{x:-262,y:28,z:4,rz:1.1},-300);
-paper('w53','R','w53',{x:268,y:-45,z:2,rz:-1.6},300);
-paper('w5','R','w5',{x:290,y:-21,z:3,rz:.9},300);
-paper('w20','R','w20',{x:310,y:3,z:4,rz:-.8},300);
+/* Worksheets are optional: a listing can have 1, 2 or 3 (keys w53, w5, w20 present in IMG). */
+if(IMG.w53) paper('w53','R','w53',{x:268,y:-45,z:2,rz:-1.6},300);
+if(IMG.w5) paper('w5','R','w5',{x:290,y:-21,z:3,rz:.9},300);
+if(IMG.w20) paper('w20','R','w20',{x:310,y:3,z:4,rz:-.8},300);
 paper('num','R','num',{x:332,y:27,z:5,rz:1.4},300);
 tri('triA','R','proc1','proc2',160,113.5);
 tri('triB','R','high1','high2',440,113.5);
@@ -446,7 +447,7 @@ const SC=[
  {id:'open',open:1,cam:OV,dur:4,t:"Here's what's inside",s:'Neighborhood and home highlights on the left. The numbers, payment breakdowns, and loan guides on the right.'},
  {id:'neigh',focus:'neigh',dur:8.5,dot:0,t:'Neighborhood highlights',s:'Parks and trails, everyday errands, restaurants, and drive times to popular destinations.'},
  {id:'home',focus:'home',dur:7.5,dot:1,t:'Home highlights',s:'Five bedrooms, four baths, 3,147 square feet and a backyard pool with a waterfall and spa.'},
- {id:'num',focus:'num',dur:9,dot:2,t:'The numbers',s:'Three different ways to structure a purchase, side by side: estimated monthly payment and cash to close.'},
+ {id:'num',focus:'num',dur:9,dot:2,t:'The numbers',s:'Different ways to structure a purchase, side by side: estimated monthly payment and cash to close.'},
  {id:'triA',focus:'triA',flip:0,dur:9.2,dot:3,t:'The mortgage process',s:'Inside: The documents buyers need, tips for a smooth loan process, and the loan types we offer.'},
  {id:'triAout',focus:'triA',flip:1,dur:5.6,dot:3,t:'The mortgage process',s:'Major milestones, from pre-qualification to closing.'},
  {id:'triB',focus:'triB',flip:0,dur:9.2,dot:4,t:'A higher standard of lending',s:'Conventional, FHA, VA, USDA, and specialized programs.'},
@@ -458,14 +459,16 @@ const ALT={triA:SC[6],triB:SC[8]};
 const FOCUS_CAP={
   neigh:SC[2], home:SC[3], num:SC[4], triA:SC[5], triB:SC[7],
   ws:{t:'Pre-application worksheets',s:''},
-  cardR:{t:'My business card',s:'Call, text, or email anytime.'},
+  cardR:{t:'Loan Officer Business Card',s:'Call, text, or email anytime.'},
   cardL:{t:'Listing agent business card',s:'Your listing agent, one tap away.'}
 };
 
-const WS=['w53','w5','w20'];
+const WSL={w53:'5% down with a 3% seller credit',w5:'5% down',w20:'20% down'};
+const WS=['w53','w5','w20'].filter(k=>IMG[k]);
+{ const n=WS.length; SC.find(x=>x.id==='num').s=n>1?['','Two','Three'][n-1]+' different ways to structure a purchase, side by side: estimated monthly payment and cash to close.':'A closer look at the numbers: estimated monthly payment and cash to close.'; }
 function wsScene(){
-  const gap=innerWidth<innerHeight?340:560, xs=[-gap,0,gap];
-  return {id:'ws',open:1,group:WS,gx:xs,flip:0,t:'Pre-application worksheets',s:'Three scenarios side by side: 5% down with a 3% seller credit, 5% down, and 20% down. Estimated payment and cash to close for each.'};
+  const gap=innerWidth<innerHeight?340:560, xs=WS.map((k,i)=>(i-(WS.length-1)/2)*gap);
+  return {id:'ws',open:1,group:WS,gx:xs,flip:0,t:'Pre-application worksheets',s:(WS.length>1?['','Two','Three'][WS.length-1]+' scenarios side by side: ':'One scenario: ')+WS.map(k=>WSL[k]).join(WS.length>2?', ':' and ').replace(/, ([^,]*)$/,', and $1')+'. Estimated payment and cash to close'+(WS.length>1?' for each.':'.')};
 }
 let cur=SC[0], idx=0, playing=false, timer=null, hoverReady=false, hrT=null, perspective=2400, hazeOn=0, focusMode=false;
 
@@ -609,7 +612,7 @@ const ZONES={
 };
 const zoneEls=[];
 Object.entries(ZONES).forEach(([id,z])=>{
-  const it=items[id]||items.w53, host=z.p==='L'?$('#faceL'):$('#base'), els=[];
+  const it=items[id]||items[WS[0]], host=z.p==='L'?$('#faceL'):$('#base'), els=[];
   z.r.forEach((r,ri)=>{
     const el=div('zone',host,`left:${r.x}px;top:${r.y}px;width:${r.w}px;height:${r.h}px;transform:translateZ(${z.z}px)`);
     el.setAttribute('role','button'); el.tabIndex=-1; el.setAttribute('aria-label',FOCUS_CAP[id].t); if(ri) el.setAttribute('aria-hidden','true');
