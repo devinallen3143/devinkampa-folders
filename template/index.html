@@ -192,17 +192,16 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 @media (prefers-reduced-motion:reduce){ #par{transition:none} }
 .cf .logo{left:150px;top:112px;width:300px}
 .cf .rule{top:262px}
-.cf .ph{position:absolute;left:80px;width:440px;top:286px;height:214px;border-radius:6px;background:#3a3f46 center/cover no-repeat;box-shadow:0 0 0 1px rgba(255,255,255,.14),0 10px 26px rgba(0,0,0,.45)}
-.cf .addr{position:absolute;left:0;right:0;top:522px;text-align:center;color:#fff;padding:0 24px}
-.cf .prep{position:absolute;left:0;right:0;top:596px;text-align:center;color:#fff;padding:0 24px}
+.cf .addr{position:absolute;left:0;right:0;top:318px;text-align:center;color:#fff;padding:0 24px}
+.cf .prep{position:absolute;left:0;right:0;top:560px;text-align:center;color:#fff;padding:0 24px}
 .cf .prep small{display:block;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:8px}
 .cf .prep strong{display:block;font-size:19px;font-weight:600;letter-spacing:-.01em}
 .cf .prep .ag{margin-top:5px;font-size:13px;color:rgba(255,255,255,.78);letter-spacing:.02em}
 .cf .prep .ag i{font-style:normal;opacity:.55;margin:0 4px}
-.cf .addr b{display:block;font-size:23px;font-weight:600;letter-spacing:-.018em;line-height:1.12}
+.cf .addr b{display:block;font-size:46px;font-weight:600;letter-spacing:-.018em;line-height:1.12}
 .cf .addr .ag{margin-top:20px;font-size:13.5px;color:rgba(255,255,255,.78);letter-spacing:.02em}
 .cf .addr .ag i{font-style:normal;opacity:.55;margin:0 4px}
-.cf .addr span{display:block;margin-top:12px;font-size:22px;color:rgba(255,255,255,.8);letter-spacing:.005em}
+.cf .addr span{display:block;margin-top:14px;font-size:22px;font-weight:500;color:rgba(255,255,255,.8);letter-spacing:.005em}
 .cf .sig{top:716px}
 @media (max-width:640px){#endcta .cc .btn{min-height:40px;padding:0 15px}#endcta .cc .btn.primary{padding:0 18px}#endcta .cc{gap:8px}}
 @media (max-height:520px){#endcta .box{display:none}#endcta{margin-top:10px;gap:8px}}
@@ -233,8 +232,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
         <div class="noise"></div><div class="spine"></div>
         <img class="logo" alt="Highlands Residential Mortgage" id="coverLogo">
         <div class="rule"></div>
-        <div class="ph" id="coverPh"></div>
-        <div class="addr"><b>1108 Salado Dr, Allen, TX 75013</b></div>
+        <div class="addr"><b>1108 Salado Dr<span>Allen, TX 75013</span></b></div>
         <div class="prep"><small>Prepared for</small><strong>Jonathan Realtor</strong><div class="ag">Real Estate Agent <i>·</i> Your Brokerage <i>·</i> License #12345</div></div>
         <div class="sig"><b>Devin Kampa</b>Loan Officer, NMLS #2532480</div>
       </div>
@@ -308,7 +306,6 @@ const $=s=>document.querySelector(s);
 const div=(cls,parent,css)=>{const d=document.createElement('div');if(cls)d.className=cls;if(css)d.style.cssText=css;if(parent)parent.appendChild(d);return d};
 const stage=$('#stage'), par=$('#par'), cam=$('#cam'), cover=$('#cover'), floorL=$('#floorL'), haze=$('#haze');
 $('#coverLogo').src=IMG.logo;
-if(IMG.cover) $('#coverPh').style.backgroundImage='url('+IMG.cover+')';
 
 /* ---------- items ---------- */
 const items={}, order=[];
