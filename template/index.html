@@ -488,7 +488,7 @@ function wsScene(){
   const gap=innerWidth<innerHeight?340:560, xs=WS.map((k,i)=>(i-(WS.length-1)/2)*gap);
   return {id:'ws',open:1,group:WS,gx:xs,flip:0,t:'Pre-application worksheets',s:(WS.length>1?['','Two','Three'][WS.length-1]+' scenarios side by side: ':'One scenario: ')+WS.map(k=>WSL[k]).join(WS.length>2?', ':' and ').replace(/, ([^,]*)$/,', and $1')+'. Estimated payment and cash to close'+(WS.length>1?' for each.':'.')};
 }
-const SEQ=.57; /* tour speed: lower is faster */
+const SEQ=.67; /* tour speed: lower is faster */
 let cur=SC[0], idx=0, playing=false, timer=null, hoverReady=false, hrT=null, perspective=2400, hazeOn=0, focusMode=false;
 
 function setPerspective(){ perspective=Math.round(Math.max(innerWidth,innerHeight)*1.7); stage.style.perspective=perspective+'px'; }

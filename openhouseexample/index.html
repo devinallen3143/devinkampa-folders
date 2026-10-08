@@ -430,7 +430,7 @@ const FOCUS_CAP={
   cardR:{t:'My business card',s:'Call, text, or email anytime.'}
 };
 
-const SEQ=.57; /* tour speed: lower is faster */
+const SEQ=.67; /* tour speed: lower is faster */
 let cur=SC[0], idx=0, playing=false, timer=null, hoverReady=false, hrT=null, perspective=2400, hazeOn=0, focusMode=false;
 
 function setPerspective(){ perspective=Math.round(Math.max(innerWidth,innerHeight)*1.7); stage.style.perspective=perspective+'px'; }
