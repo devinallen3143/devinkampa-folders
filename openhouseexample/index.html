@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.5, viewport-fit=cover">
 <title>Open house folder from Devin Kampa</title>
 <style>
 :root{
@@ -185,8 +185,8 @@ html,body{overscroll-behavior:none}
 #dots button::after{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.28;transition:all .35s ease}
 #dots button.on::after{opacity:1;width:20px;border-radius:4px}
 #dots button{width:auto;min-width:22px;border-radius:12px}
-#top{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));top:calc(16px + env(safe-area-inset-top,0px));display:flex;gap:8px}
-#top .btn{min-height:40px;padding:0 16px;font-size:14px}
+#top{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));top:calc(19px + env(safe-area-inset-top,0px));display:flex;gap:8px}
+#top .btn{min-height:34px;padding:0 13px;font-size:13px}
 #reader{position:fixed;inset:0;z-index:5;background:var(--haze);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
   display:none;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}
 #reader.on{display:block}
@@ -430,7 +430,7 @@ const FOCUS_CAP={
   cardR:{t:'My business card',s:'Call, text, or email anytime.'}
 };
 
-const SEQ=.62; /* tour speed: lower is faster */
+const SEQ=.57; /* tour speed: lower is faster */
 let cur=SC[0], idx=0, playing=false, timer=null, hoverReady=false, hrT=null, perspective=2400, hazeOn=0, focusMode=false;
 
 function setPerspective(){ perspective=Math.round(Math.max(innerWidth,innerHeight)*1.7); stage.style.perspective=perspective+'px'; }

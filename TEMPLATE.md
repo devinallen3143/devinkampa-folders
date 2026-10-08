@@ -31,3 +31,7 @@ It was built from the 1108 Salado Dr folder, so that listing's details are what 
 
 ## Performance step (every folder)
 After swapping the content and before `tools/make_pdf.py`, run `python3 tools/optimize_folder.py <folder-slug>`. It adds lighter `_s` copies of the flyers, worksheets and trifolds to `const IMG`; the 3D scene uses those (as blob URLs, decoded once), while "View full size" and `folder.pdf` keep the full-size images. This prevents phones from running out of memory and reloading. Re-running is safe.
+
+## UI notes
+- Top-right buttons (View full size, Skip, Replay, Close folder) are 34px tall, smaller than the 40px Share/Save circles. Post-sequence page zoom is capped at 2.5x (`maximum-scale=2.5`) with a 1x minimum.
+- End CTAs: agent button reads "Call the Agent", lender button reads "Call a Lender"; each button row is nudged 8px left.
