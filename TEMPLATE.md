@@ -27,3 +27,7 @@ It was built from the 1108 Salado Dr folder, so that listing's details are what 
 - Page is `noindex`.
 
 - Share button: opens the phone's share sheet (or copies the link on desktop). Save button: downloads `folder.pdf`, one Letter page per flyer.
+
+
+## Performance step (every folder)
+After swapping the content and before `tools/make_pdf.py`, run `python3 tools/optimize_folder.py <folder-slug>`. It adds lighter `_s` copies of the flyers, worksheets and trifolds to `const IMG`; the 3D scene uses those (as blob URLs, decoded once), while "View full size" and `folder.pdf` keep the full-size images. This prevents phones from running out of memory and reloading. Re-running is safe.
