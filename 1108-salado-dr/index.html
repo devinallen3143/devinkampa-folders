@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf-8><meta name="robots" content="noindex,nofollow"><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1"></head><body><title>1108 Salado Dr Folder</title>
+<!doctype html><html><head><meta charset=utf-8><meta name="robots" content="noindex,nofollow"><meta name=viewport content="width=device-width,initial-scale=1"></head><body><title>1108 Salado Dr Folder</title>
 <style>
 :root{
   --bg1:#ffffff;--bg2:#ffffff;--bg3:#ffffff;
@@ -16,11 +16,8 @@ button,a{font:inherit;color:inherit}
 button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* ---------- stage ---------- */
-html,body{overscroll-behavior:none}
-#stage.seq{touch-action:pan-x pan-y}
-#fullB{background:linear-gradient(135deg,#3b97f5 0%,#0a5fc4 100%);color:#fff;border-color:transparent;font-weight:600;gap:8px;box-shadow:0 4px 12px rgba(10,95,196,.30),inset 0 1px 0 rgba(255,255,255,.28)}
-#fullB svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-#stage{touch-action:pan-x pan-y;position:fixed;inset:0;overflow:hidden;
+#fullB{background:linear-gradient(135deg,#3b97f5 0%,#0a5fc4 100%);color:#fff;border-color:transparent;font-weight:600;box-shadow:0 4px 12px rgba(10,95,196,.30),inset 0 1px 0 rgba(255,255,255,.28)}
+#stage{position:fixed;inset:0;overflow:hidden;
   background:radial-gradient(120% 95% at 50% 38%,var(--bg1) 0%,var(--bg2) 62%,var(--bg3) 100%);z-index:1}
 #par,#cam{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}
 #par{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
@@ -183,14 +180,12 @@ html,body{overscroll-behavior:none}
 #dots button.on::after{opacity:1;width:20px;border-radius:4px}
 #dots button{width:auto;min-width:22px;border-radius:12px}
 #top{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));top:calc(16px + env(safe-area-inset-top,0px));display:flex;gap:8px}
-#top .btn{min-height:36px;height:36px;padding:0 14px;font-size:13px}
+#top .btn{min-height:40px;padding:0 16px;font-size:14px}
 #reader{position:fixed;inset:0;z-index:5;background:var(--haze);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
   display:none;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}
 #reader.on{display:block}
 #reader .pages{display:flex;flex-direction:column;align-items:center;gap:20px;padding:72px 12px calc(40px + env(safe-area-inset-bottom,0px))}
-#reader .pages{min-width:100%;width:max-content}
-#reader img{cursor:zoom-in;width:min(100vw - 24px,1100px);height:auto;border-radius:3px;box-shadow:0 10px 40px rgba(0,0,0,.28);background:#fff}
-#reader img.z{width:min(220vw,2400px);cursor:zoom-out}
+#reader img{width:min(100%,1100px);height:auto;border-radius:3px;box-shadow:0 10px 40px rgba(0,0,0,.28);background:#fff}
 #readerClose{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));top:calc(16px + env(safe-area-inset-top,0px));z-index:6}
 @media (max-width:640px){
   #cap{bottom:calc(78px + env(safe-area-inset-bottom,0px))}
@@ -209,13 +204,12 @@ html,body{overscroll-behavior:none}
 @media (max-width:640px){#endcta .cc .btn{min-height:40px;padding:0 15px}#endcta .cc .btn.primary{padding:0 18px}#endcta .cc{gap:8px}}
 @media (max-height:520px){#endcta .box{display:none}#endcta{margin-top:10px;gap:8px}}
 #savebar{position:fixed;left:calc(16px + env(safe-area-inset-left,0px));top:calc(16px + env(safe-area-inset-top,0px));display:flex;gap:8px;z-index:4}
-#savebar .btn{min-height:36px;height:36px;padding:0 14px;font-size:13px;gap:7px;text-decoration:none}
+#savebar .btn{min-height:40px;padding:0 15px;font-size:14px;gap:7px;text-decoration:none}
 #savebar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 #toast{position:fixed;left:50%;top:calc(66px + env(safe-area-inset-top,0px));transform:translate(-50%,-8px);padding:10px 18px;border-radius:999px;background:#25282c;color:#fff;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;z-index:6;white-space:nowrap}
 #toast.on{opacity:1;transform:translate(-50%,0)}
-@media (max-width:480px){#savebar .btn{padding:0 12px;font-size:13px;gap:6px}#top .btn{padding:0 11px;font-size:12.5px}}
-@media (max-width:480px){#savebar .btn{width:36px;padding:0}#savebar .btn span{display:none}}
-@media (max-width:380px){#top .btn{padding:0 9px;font-size:12px}#top{gap:6px}}
+@media (max-width:480px){#savebar .btn{padding:0 12px;font-size:13px;gap:6px}#top .btn{padding:0 11px;font-size:13px}}
+@media (max-width:480px){#savebar .btn{width:40px;padding:0}#savebar .btn span{display:none}}
 </style>
 
 
@@ -260,7 +254,7 @@ html,body{overscroll-behavior:none}
   <div id="toast" role="status" aria-live="polite"></div>
   <div id="top">
     <button class="btn hide" id="flipB" type="button">Flip over</button>
-    <button class="btn hide" id="fullB" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>View full size</span></button>
+    <button class="btn hide" id="fullB" type="button">View full size</button>
     <button class="btn hide" id="closeB" type="button">Close</button>
     <button class="btn hide" id="skipB" type="button">Skip to the end</button>
     <button class="btn hide" id="replayB" type="button">Replay</button>
@@ -555,7 +549,6 @@ function ui(sc){
   show('#openB',closed);
   show('#contact',exFocus&&sc.id==='card');
   show('#endcta',done&&!exFocus);
-  stage.classList.toggle('seq',pres);
   show('#bar',pres);
   show('#skipB',pres);
   show('#replayB',done);
@@ -650,15 +643,7 @@ function openReader(){
   if(playing){ playing=false; clearTimeout(timer); setPP(); }
 }
 $('#fullB').onclick=openReader;
-$('#readerPages').addEventListener('click',e=>{ if(e.target.tagName==='IMG') e.target.classList.toggle('z'); });
-/* Pinching a flyer opens the flat full-size reader (which zooms natively) instead of zooming the whole 3D page, which can stutter or reload on phones. */
-/* HARD STOP: the 3D page never zooms (it crashes phones). Zoom lives in the flat full-size reader (View full size). */
-const noZoom=()=>!$('#reader').classList.contains('on');
-stage.addEventListener('touchstart',e=>{ if(e.touches.length>1&&noZoom()) e.preventDefault(); },{passive:false});
-['gesturestart','gesturechange'].forEach(n=>stage.addEventListener(n,e=>{ if(noZoom()) e.preventDefault(); }));
-addEventListener('wheel',e=>{ if(e.ctrlKey&&noZoom()) e.preventDefault(); },{passive:false});
-function resetZoom(){ const m=document.querySelector('meta[name=viewport]'), c=m.content; m.content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1'; setTimeout(()=>{ m.content=c; },120); }
-$('#readerClose').onclick=()=>{ $('#reader').classList.remove('on'); resetZoom(); };
+$('#readerClose').onclick=()=>$('#reader').classList.remove('on');
 
 /* ---------- share / save ---------- */
 const toast=$('#toast'); let toastT=null;

@@ -33,5 +33,5 @@ It was built from the 1108 Salado Dr folder, so that listing's details are what 
 After swapping the content and before `tools/make_pdf.py`, run `python3 tools/optimize_folder.py <folder-slug>`. It adds lighter `_s` copies of the flyers, worksheets and trifolds to `const IMG`; the 3D scene uses those (as blob URLs, decoded once), while "View full size" and `folder.pdf` keep the full-size images. This prevents phones from running out of memory and reloading. Re-running is safe.
 
 ## UI notes
-- Top-right buttons (View full size, Skip, Replay, Close folder) and the Share/Save buttons are all 36px tall and aligned. Share/Save are icon-only at 480px wide and below so the four top buttons never overlap.
+- Top-right buttons (View full size, Skip, Replay, Close folder) and the Share/Save buttons are all 36px tall and aligned. Share/Save become icon-only at 480px wide and below so the top buttons never overlap on large iPhones (402-440px). Button heights are the original 40px; View full size has a blue gradient (no icon).
 - End CTAs: agent button reads "Call the Agent", lender button reads "Call a Lender"; each button row is nudged 8px left.
