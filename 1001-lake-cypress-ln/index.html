@@ -184,8 +184,8 @@ html,body{overscroll-behavior:none}
 #dots button::after{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.28;transition:all .35s ease}
 #dots button.on::after{opacity:1;width:20px;border-radius:4px}
 #dots button{width:auto;min-width:22px;border-radius:12px}
-#top{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));top:calc(19px + env(safe-area-inset-top,0px));display:flex;gap:8px}
-#top .btn{min-height:34px;padding:0 13px;font-size:13px}
+#top{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));top:calc(16px + env(safe-area-inset-top,0px));display:flex;gap:8px}
+#top .btn{min-height:36px;height:36px;padding:0 14px;font-size:13px}
 #reader{position:fixed;inset:0;z-index:5;background:var(--haze);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
   display:none;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}
 #reader.on{display:block}
@@ -215,12 +215,12 @@ html,body{overscroll-behavior:none}
 @media (max-width:640px){#endcta .cc .btn{min-height:40px;padding:0 15px}#endcta .cc .btn.primary{padding:0 18px}#endcta .cc{gap:8px}}
 @media (max-height:520px){#endcta .box{display:none}#endcta{margin-top:10px;gap:8px}}
 #savebar{position:fixed;left:calc(16px + env(safe-area-inset-left,0px));top:calc(16px + env(safe-area-inset-top,0px));display:flex;gap:8px;z-index:4}
-#savebar .btn{min-height:40px;padding:0 15px;font-size:14px;gap:7px;text-decoration:none}
+#savebar .btn{min-height:36px;height:36px;padding:0 14px;font-size:13px;gap:7px;text-decoration:none}
 #savebar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 #toast{position:fixed;left:50%;top:calc(66px + env(safe-area-inset-top,0px));transform:translate(-50%,-8px);padding:10px 18px;border-radius:999px;background:#25282c;color:#fff;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;z-index:6;white-space:nowrap}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 @media (max-width:480px){#savebar .btn{padding:0 12px;font-size:13px;gap:6px}#top .btn{padding:0 11px;font-size:12.5px}}
-@media (max-width:400px){#savebar .btn{width:40px;padding:0}#savebar .btn span{display:none}}
+@media (max-width:400px){#savebar .btn{width:36px;padding:0}#savebar .btn span{display:none}}
 </style>
 
 
