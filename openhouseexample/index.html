@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.5, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
 <title>Open house folder from Devin Kampa</title>
 <style>
 :root{
@@ -44,7 +44,7 @@ html,body{overscroll-behavior:none}
 #stage.seq{touch-action:pan-x pan-y}
 #fullB{background:linear-gradient(135deg,#3b97f5 0%,#0a5fc4 100%);color:#fff;border-color:transparent;font-weight:600;gap:8px;box-shadow:0 6px 18px rgba(10,95,196,.38),inset 0 1px 0 rgba(255,255,255,.28)}
 #fullB svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-#stage{touch-action:pan-x pan-y pinch-zoom;position:fixed;inset:0;overflow:hidden;
+#stage{touch-action:pan-x pan-y;position:fixed;inset:0;overflow:hidden;
   background:radial-gradient(120% 95% at 50% 38%,var(--bg1) 0%,var(--bg2) 62%,var(--bg3) 100%);z-index:1}
 #par,#cam{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}
 #par{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
@@ -586,10 +586,10 @@ $('#fullB').onclick=openReader;
 $('#readerPages').addEventListener('click',e=>{ if(e.target.tagName==='IMG') e.target.classList.toggle('z'); });
 /* Pinching a flyer opens the flat full-size reader (which zooms natively) instead of zooming the whole 3D page, which can stutter or reload on phones. */
 /* During the guided sequence zooming is off (use the buttons); afterwards the page zooms natively. */
-const inSeq=()=>stage.classList.contains('seq');
-stage.addEventListener('touchstart',e=>{ if(e.touches.length>1&&inSeq()) e.preventDefault(); },{passive:false});
-['gesturestart','gesturechange'].forEach(n=>stage.addEventListener(n,e=>{ if(inSeq()) e.preventDefault(); }));
-addEventListener('wheel',e=>{ if(e.ctrlKey&&inSeq()&&!$('#reader').classList.contains('on')) e.preventDefault(); },{passive:false});
+const noZoom=()=>!$('#reader').classList.contains('on');
+stage.addEventListener('touchstart',e=>{ if(e.touches.length>1&&noZoom()) e.preventDefault(); },{passive:false});
+['gesturestart','gesturechange'].forEach(n=>stage.addEventListener(n,e=>{ if(noZoom()) e.preventDefault(); }));
+addEventListener('wheel',e=>{ if(e.ctrlKey&&noZoom()) e.preventDefault(); },{passive:false});
 $('#readerClose').onclick=()=>$('#reader').classList.remove('on');
 
 /* ---------- misc ---------- */
