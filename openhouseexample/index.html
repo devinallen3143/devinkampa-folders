@@ -40,7 +40,8 @@ button,a{font:inherit;color:inherit}
 button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* ---------- stage ---------- */
-#stage{position:fixed;inset:0;overflow:hidden;
+html,body{overscroll-behavior:none}
+#stage{touch-action:pan-x pan-y;position:fixed;inset:0;overflow:hidden;
   background:radial-gradient(120% 95% at 50% 38%,var(--bg1) 0%,var(--bg2) 62%,var(--bg3) 100%);z-index:1}
 #par,#cam{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}
 #par{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
@@ -187,7 +188,9 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
   display:none;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}
 #reader.on{display:block}
 #reader .pages{display:flex;flex-direction:column;align-items:center;gap:20px;padding:72px 12px calc(40px + env(safe-area-inset-bottom,0px))}
-#reader img{width:min(100%,1100px);height:auto;border-radius:3px;box-shadow:0 10px 40px rgba(0,0,0,.28);background:#fff}
+#reader .pages{min-width:100%;width:max-content}
+#reader img{cursor:zoom-in;width:min(100vw - 24px,1100px);height:auto;border-radius:3px;box-shadow:0 10px 40px rgba(0,0,0,.28);background:#fff}
+#reader img.z{width:min(220vw,2400px);cursor:zoom-out}
 #readerClose{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));top:calc(16px + env(safe-area-inset-top,0px));z-index:6}
 @media (max-width:640px){
   #cap{bottom:calc(78px + env(safe-area-inset-bottom,0px))}
@@ -571,6 +574,12 @@ function openReader(){
   if(playing){ playing=false; clearTimeout(timer); setPP(); }
 }
 $('#fullB').onclick=openReader;
+$('#readerPages').addEventListener('click',e=>{ if(e.target.tagName==='IMG') e.target.classList.toggle('z'); });
+/* Pinching a flyer opens the flat full-size reader (which zooms natively) instead of zooming the whole 3D page, which can stutter or reload on phones. */
+const flyerShown=()=>!$('#fullB').classList.contains('hide');
+stage.addEventListener('touchstart',e=>{ if(e.touches.length>1&&flyerShown()){ e.preventDefault(); openReader(); } },{passive:false});
+['gesturestart','gesturechange'].forEach(n=>stage.addEventListener(n,e=>{ e.preventDefault(); if(n==='gesturestart'&&flyerShown()) openReader(); }));
+addEventListener('wheel',e=>{ if(e.ctrlKey&&!$('#reader').classList.contains('on')){ e.preventDefault(); if(flyerShown()) openReader(); } },{passive:false});
 $('#readerClose').onclick=()=>$('#reader').classList.remove('on');
 
 /* ---------- misc ---------- */
