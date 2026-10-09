@@ -195,6 +195,10 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
   #top .btn{padding:0 13px}
 }
 @media (prefers-reduced-motion:reduce){ #par{transition:none} }
+
+#legal{position:fixed;right:calc(12px + env(safe-area-inset-right,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));width:min(330px,34vw);z-index:4;pointer-events:none;text-align:right;font-size:9px;line-height:1.35;font-weight:400;color:#8a8f98}
+#legal a{color:inherit;text-decoration:underline;pointer-events:auto}
+@media (max-width:640px){#legal{left:calc(12px + env(safe-area-inset-left,0px));width:auto;font-size:8px;line-height:1.3;bottom:calc(4px + env(safe-area-inset-bottom,0px))}#bar{bottom:calc(40px + env(safe-area-inset-bottom,0px))}#cap{bottom:calc(96px + env(safe-area-inset-bottom,0px))}}
 </style>
 </head>
 <body>
@@ -230,7 +234,8 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 </div>
 <div id="backdrop"></div>
 
-<div id="ui">
+<div id="legal">Highlands Residential Mortgage Ltd. NMLS #134871 | Equal Housing Lender | 950 W. Bethany Drive, Suite 800, Allen, TX 75013 | <a href="https://www.nmlsconsumeraccess.org" target="_blank" rel="noopener">NMLS Consumer Access</a></div>
+  <div id="ui">
   <div id="top">
     <button class="btn hide" id="flipB" type="button">Flip over</button>
     <button class="btn hide" id="fullB" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>View full size</span></button>
