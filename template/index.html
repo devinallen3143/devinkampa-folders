@@ -421,13 +421,13 @@ function unfold(it,d){ // left side opens first, then the right side, revealing 
   it.R.style.transition=`transform 1.1s ease-in-out ${d+.85}s`; it.R.style.transform=UR;
   it.tsh.style.transition=`opacity .8s ease ${d+1.6}s`; it.tsh.style.opacity=1;
 }
-function toFocus(it,d,flip){
+function toFocus(it,d,flip,closed){
   const S=it.slide, lead=S?.55:0;
   if(S){ it.s1.style.transition=`translate .7s ${E2} ${d}s`; it.s1.style.translate=`0 ${-S}px`; }
   it.s2.style.transition=`translate 1.3s ${E1} ${d+lead}s`; it.s2.style.translate=`0 ${S}px`;
   it.el.style.transition=`translate 1.3s ${E1} ${d+lead}s, transform 1.3s ${E1} ${d+lead}s`;
   pose(it,Object.assign({},it.focus,{flip}));
-  if(it.type==='tri') unfold(it,d+lead+.8);
+  if(it.type==='tri'&&!closed){ it.opened=true; unfold(it,d+lead+.8); }
   it.el.classList.add('fz');
 }
 function flipTo(it,flip){
@@ -436,14 +436,14 @@ function flipTo(it,flip){
 }
 function toRest(it,d){
   const S=it.slide; let t=d;
-  if(it.type==='tri') t+=foldUp(it,d);
+  if(it.type==='tri'&&it.opened){ t+=foldUp(it,d); it.opened=false; }
   it.s2.style.transition=`translate .9s ${E1} ${t}s`; it.s2.style.translate='0 0px';
   it.el.style.transition=`translate .9s ${E1} ${t}s, transform .8s ${E1} ${t+(S?.85:0)}s`;
   pose(it,it.rest);
   if(S){ it.s1.style.transition=`translate .7s ${E2} ${t+1.5}s`; it.s1.style.translate='0 0px'; }
   it.el.classList.remove('fz');
 }
-const dropTotal=it=>(it.type==='tri'?1.2:0)+(it.slide?2.2:1.0);
+const dropTotal=it=>(it.type==='tri'&&it.opened?1.2:0)+(it.slide?2.2:1.0);
 function hoverOn(it){
   if(it.state!=='rest') return;
   if(it.slide){ it.s1.style.transition=`translate .5s ${E3}`; it.s1.style.translate=`0 -110px`; }
@@ -462,21 +462,21 @@ const SC=[
  {id:'open',open:1,cam:OV,dur:4,t:"Here's what's inside",s:'Neighborhood and home highlights on the left. The numbers, payment breakdowns, and loan guides on the right.'},
  {id:'neigh',focus:'neigh',dur:8.5,dot:0,t:'Neighborhood highlights',s:'Parks and trails, everyday errands, restaurants, and drive times to popular destinations.'},
  {id:'home',focus:'home',dur:7.5,dot:1,t:'Home highlights',s:'Five bedrooms, four baths, 3,147 square feet and a backyard pool with a waterfall and spa.'},
+ {id:'triA',focus:'triA',flip:0,closed:true,fitW:PW,fitH:PH,dur:6,dot:2,t:'The mortgage process',s:'The documents buyers need, tips for a smooth loan process, and the milestones from pre-qualification to closing.'},
+ {id:'triB',focus:'triB',flip:0,closed:true,fitW:PW,fitH:PH,dur:6,dot:3,t:'A higher standard of lending',s:'Conventional, FHA, VA, USDA, and specialized programs, and who Highlands is.'},
  {id:'num',focus:'num',dur:9,dot:2,t:'The numbers',s:'Different ways to structure a purchase, side by side: estimated monthly payment and cash to close.'},
  ...(IMG.bys?[{id:'bys',focus:'bys',dur:8,dot:3,t:'Buy before you sell',s:'Remove the home sale contingency. FlexCap helps you qualify for your next home without the burden of two loans.'}]:[]),
- {id:'triA',focus:'triA',flip:0,dur:9.2,dot:3,t:'The mortgage process',s:'Inside: The documents buyers need, tips for a smooth loan process, and the loan types we offer.'},
- {id:'triAout',focus:'triA',flip:1,dur:5.6,dot:3,t:'The mortgage process',s:'Major milestones, from pre-qualification to closing.'},
- {id:'triB',focus:'triB',flip:0,dur:9.2,dot:4,t:'A higher standard of lending',s:'Conventional, FHA, VA, USDA, and specialized programs.'},
- {id:'triBout',focus:'triB',flip:1,dur:5.6,dot:4,t:'A higher standard of lending',s:'Who Highlands is and how we work with buyers.'},
+ ...(['w53','w5','w20'].some(k=>IMG[k])?[{id:'ws',dyn:true,dur:8.5,dot:6,t:'Pre-application worksheets',s:''}]:[]),
  {id:'done',open:1,cam:OV,explore:true,t:"That's the folder.",s:'Hover or tap anything to take a closer look.'}
 ];
 const S=id=>SC.find(x=>x.id===id);
-const DOTIDS=['neigh','home','num','bys','triA','triB'].filter(id=>S(id));
+const DOTIDS=['neigh','home','triA','triB','num','bys','ws'].filter(id=>S(id));
 const DOTS=DOTIDS.map(id=>SC.findIndex(x=>x.id===id));
 SC.forEach(x=>{ const di=DOTIDS.indexOf((x.id||'').replace(/out$/,'')); if(di>=0) x.dot=di; });
-const ALT={triA:S('triAout'),triB:S('triBout')};
+const TRI_CAP={triA:{t:'The mortgage process',s:'Inside: The documents buyers need, tips for a smooth loan process, and the loan types we offer.'},triB:{t:'A higher standard of lending',s:'Conventional, FHA, VA, USDA, and specialized programs.'}};
+const ALT={triA:{t:'The mortgage process',s:'Major milestones, from pre-qualification to closing.'},triB:{t:'A higher standard of lending',s:'Who Highlands is and how we work with buyers.'}};
 const FOCUS_CAP={
-  neigh:S('neigh'), home:S('home'), num:S('num'), bys:S('bys'), triA:S('triA'), triB:S('triB'),
+  neigh:S('neigh'), home:S('home'), num:S('num'), bys:S('bys'), triA:TRI_CAP.triA, triB:TRI_CAP.triB,
   ws:{t:'Pre-application worksheets',s:''},
   cardR:{t:"The loan officer's business card",s:'Call, text, or email anytime.'},
   cardL:{t:"The listing agent's business card",s:'Your listing agent, one tap away.'}
@@ -505,7 +505,7 @@ function applyCam(sc,ms){
   let sp;
   if(sc.group){ sp={cx:0,cy:-30,w:Math.max(...sc.gx)-Math.min(...sc.gx)+530,h:682,z:FZ,tilt:0,yaw:0,fit:.91}; }
   else if(sc.focus){ const it=items[sc.focus], fp=it.focus, k=fp.s||1;
-    sp={cx:fp.x,cy:fp.y,w:it.fw*k,h:it.fh*k,z:FZ,tilt:0,yaw:0,fit:.91}; }
+    sp={cx:fp.x,cy:fp.y,w:sc.fitW||it.fw*k,h:sc.fitH||it.fh*k,z:FZ,tilt:0,yaw:0,fit:.91}; }
   else sp=sc.cam;
   const top=(sc.id!=='closed'&&vw<900)?66:26, bottom=capSpace(sc);
   const s0=Math.min(vw*.94/sp.w,(vh-top-bottom)/sp.h)*(sp.fit||.98);
@@ -519,6 +519,7 @@ function apply(sc,instant){
   if(instant){ stage.classList.add('inst'); }
   const fids=sc.group||(sc.focus?[sc.focus]:[]), fid=fids.length?fids[0]:null;
   let drop=null; order.forEach(it=>{ if(it.state==='focus'&&!fids.includes(it.id)) drop=it; });
+  const dropOpened=!!(drop&&drop.opened);
   const d=(drop&&fid)?Math.max(0,dropTotal(drop)-.9):0;
   order.forEach(it=>{
     if(!it.focus0) it.focus0=it.focus;
@@ -527,7 +528,7 @@ function apply(sc,instant){
       const want=gi>=0?Object.assign({},it.focus0,{x:sc.gx[gi],y:-30,z:FZ+gi*2}):it.focus0;
       const moved=it.focus!==want&&(gi>=0||it.focus!==it.focus0);
       if(it.state==='focus'&&moved){ it.focus=want; it.el.style.transition=`translate 1s ${E1} 0s, transform 1s ${E1} 0s`; pose(it,Object.assign({},it.focus,{flip:sc.flip||0})); }
-      else if(it.state!=='focus'){ it.focus=want; it.state='focus'; it.flip=sc.flip||0; toFocus(it,d,it.flip); }
+      else if(it.state!=='focus'){ it.focus=want; it.state='focus'; it.flip=sc.flip||0; toFocus(it,d,it.flip,sc.closed); }
       else if((sc.flip||0)!==it.flip){ it.flip=sc.flip||0; flipTo(it,it.flip); }
     } else if(it.state==='focus'){ it.state='rest'; toRest(it,0); }
   });
@@ -540,7 +541,7 @@ function apply(sc,instant){
   // haze
   const want=fid?1:0;
   if(want!==hazeOn){ hazeOn=want;
-    const hd=want? d+.3 : ((drop?(drop.type==='tri'?1.2:0):0)+.7);
+    const hd=want? d+.3 : ((dropOpened?1.2:0)+.7);
     haze.style.transition=`opacity ${want?1.1:1.3}s ease ${hd}s`; haze.style.opacity=want; }
   const opening=(prev.id==='closed'&&isOpen);
   applyCam(sc, opening?2.1:(fid&&!prev.focus?1.8:1.7));
@@ -581,7 +582,7 @@ DOTS.forEach((si,i)=>{ const b=document.createElement('button'); b.type='button'
 /* ---------- playback ---------- */
 function go(i,instant){
   clearTimeout(timer); focusMode=false; $('#backdrop').classList.remove('on');
-  idx=Math.max(0,Math.min(SC.length-1,i)); const sc=SC[idx];
+  idx=Math.max(0,Math.min(SC.length-1,i)); const sc=SC[idx]; if(sc.dyn) Object.assign(sc,wsScene());
   apply(sc,instant);
   if(playing&&sc.dur) timer=setTimeout(()=>go(idx+1),sc.dur*1000*SEQ);
   if(sc.explore) playing=false;
@@ -690,7 +691,7 @@ addEventListener('pointermove',e=>{
   const x=e.clientX/innerWidth-.5, y=e.clientY/innerHeight-.5;
   par.style.transform=`rotateX(${(-y*4).toFixed(2)}deg) rotateY(${(x*6).toFixed(2)}deg)`;
 });
-addEventListener('resize',()=>{ setPerspective(); stage.classList.add('inst'); applyCam(cur); void stage.offsetWidth; requestAnimationFrame(()=>stage.classList.remove('inst')); });
+addEventListener('resize',()=>{ if(cur.dyn) Object.assign(cur,wsScene()); setPerspective(); stage.classList.add('inst'); applyCam(cur); void stage.offsetWidth; requestAnimationFrame(()=>stage.classList.remove('inst')); });
 
 if(window.top!==window.self){ document.querySelectorAll('#contact a,#endcta a,#dlB').forEach(a=>{a.target='_blank';a.rel='noopener'}); }
 setPerspective(); setPP();

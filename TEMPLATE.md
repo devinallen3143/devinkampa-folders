@@ -24,7 +24,7 @@ It was built from the 1108 Salado Dr folder, so that listing's details are what 
 5. Commit and push. The link is `devinkampa.com/folder/<address-slug>/`.
 
 ## Behavior
-- Cover tap or "Open the folder" starts a guided tour: Neighborhood, Home, The Numbers, Buy Before You Sell, the two trifolds (inside and outside). The worksheets are skipped in the tour.
+- Cover tap or "Open the folder" starts a guided tour: Neighborhood, Home, then the right pocket front to back: the two trifolds (closed, cover faces only), The Numbers, Buy Before You Sell, and the pre-application worksheets side by side last. Trifolds still open when tapped in the explore view.
 - When the folder is fully open the tour ends. Tapping any worksheet lifts all of them side by side. "Close folder" returns to the closed cover.
 - Page is `noindex`.
 
