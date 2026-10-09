@@ -397,9 +397,9 @@ const WSK=['w53','w5','w20'].filter(k=>IMG[k]), WSRZ={w53:-1.6,w5:.9,w20:-.8};
 const RCOUNT=WSK.length+(IMG.bys?1:0)+1, RSTEP=Math.min(22,64/Math.max(1,RCOUNT-1));
 let rslot=0;
 WSK.forEach(k=>{ paper(k,'R',k,{x:268+rslot*RSTEP,y:-45+24*rslot,z:2+rslot,rz:WSRZ[k]},300); rslot++; });
-const BYS_TOP=WSK.length?Math.max(14+24*WSK.length,72):14, BYS_H=56;
-let NUM_TOP=BYS_TOP, BYS_X=0;
-if(IMG.bys){ BYS_X=268+rslot*RSTEP; paper('bys','R','bys',{x:BYS_X,y:BYS_TOP-59,z:2+rslot,rz:-1.1},300); rslot++; NUM_TOP=BYS_TOP+BYS_H; }
+const BYS_TOP=WSK.length?Math.max(14+24*WSK.length,64):14, NUM_MAX=110;
+let NUM_TOP=BYS_TOP, BYS_X=0, BYS_H=46;
+if(IMG.bys){ BYS_X=268+rslot*RSTEP; paper('bys','R','bys',{x:BYS_X,y:BYS_TOP-59,z:2+rslot,rz:-1.1},300); rslot++; BYS_H=Math.max(16,Math.min(46,NUM_MAX-BYS_TOP)); NUM_TOP=BYS_TOP+BYS_H; }
 const NUM_X=268+rslot*RSTEP;
 paper('num','R','num',{x:NUM_X,y:NUM_TOP-59,z:2+rslot,rz:1.4},300);
 tri('triA','R','proc1','proc2',160,113.5);
