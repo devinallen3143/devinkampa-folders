@@ -13,7 +13,7 @@ folder = sys.argv[1]
 title = sys.argv[2] if len(sys.argv) > 2 else folder
 html = open(os.path.join(folder, 'index.html'), encoding='utf-8').read()
 IMG = json.loads(re.search(r'const IMG=(\{.*?\});</script>', html, re.S).group(1))
-ORDER = ['neigh', 'home', 'num', 'w53', 'w5', 'w20', 'proc1', 'proc2', 'high1', 'high2']
+ORDER = ['neigh', 'home', 'num', 'bys', 'w53', 'w5', 'w20', 'proc1', 'proc2', 'high1', 'high2']
 
 def layout(w, h, ndpi):
     pw, ph = (792.0, 612.0) if w > h else (612.0, 792.0)

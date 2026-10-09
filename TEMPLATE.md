@@ -19,12 +19,12 @@ It was built from the 1108 Salado Dr folder, so that listing's details are what 
    - Inside cards are titled "The listing agent's business card" and "The loan officer's business card"; end CTAs are "Call agent" and "Call lender"
    - Flyer images (data URIs in `const IMG`): `neigh` (Neighborhood highlights), `home` (Home highlights), `num` (The Numbers), `w53` / `w5` / `w20` (pre-application worksheets: 5% down + 3% seller credit, 5% down, 20% down). Include only the keys the listing has (1, 2 or 3); delete the others from `IMG`. The folder, the worksheet lift, the scene captions and "The numbers" caption adapt automatically, and `tools/make_pdf.py` skips missing keys
    - Flyer footers (all 3 flyers): no "YOUR AGENT" / "YOUR LENDER" tag above the names. Just the photo, name, title, phone, email and brokerage/logo.
-3. Constant for every folder (leave alone): the two trifolds (`proc1`, `proc2`, `high1`, `high2`), the Highlands logo, Devin's business card, Devin's contact buttons.
+3. Constant for every folder (leave alone): the two trifolds (`proc1`, `proc2`, `high1`, `high2`), the Buy Before You Sell flyer (`bys`, Devin's branded FlexCap flyer with his newer headshot), the Highlands logo, Devin's business card, Devin's contact buttons.
 4. Rebuild the downloadable PDF: `python3 tools/make_pdf.py <address-slug> "<Address> - Listing Folder"` (needs `pip install img2pdf`). This writes `<address-slug>/folder.pdf`, which the Save button downloads.
 5. Commit and push. The link is `devinkampa.com/folder/<address-slug>/`.
 
 ## Behavior
-- Cover tap or "Open the folder" starts a guided tour: Neighborhood, Home, The Numbers, the two trifolds (inside and outside). The worksheets are skipped in the tour.
+- Cover tap or "Open the folder" starts a guided tour: Neighborhood, Home, The Numbers, Buy Before You Sell, the two trifolds (inside and outside). The worksheets are skipped in the tour.
 - When the folder is fully open the tour ends. Tapping any worksheet lifts all of them side by side. "Close folder" returns to the closed cover.
 - Page is `noindex`.
 
@@ -37,3 +37,12 @@ After swapping the content and before `tools/make_pdf.py`, run `python3 tools/op
 ## UI notes
 - Top-right buttons (View full size, Skip, Replay, Close folder) and the Share/Save buttons are all 36px tall and aligned. Share/Save become icon-only at 480px wide and below so the top buttons never overlap on large iPhones (402-440px). Button heights are the original 40px; View full size has a blue gradient (no icon).
 - End CTAs: agent button reads "Call the Agent", lender button reads "Call a Lender"; each button row is nudged 8px left.
+
+
+## Right pocket order (Oct 2026)
+Back to front: the pre-application worksheets (1 to 3), then **Buy Before You Sell** (`bys`), then The Numbers, then the two trifold stacks, then Devin's card. Every folder gets Buy Before You Sell; it is already in `template/index.html`, so copying the template is enough.
+- Positions and hit zones are computed from the pieces present (`BYS_TOP`, `BYS_H`, `NUM_TOP` near the top of the script), so 1, 2 or 3 worksheets all stack cleanly. Buy Before You Sell has its own tap zone (56 px tall in folder units, directly above The Numbers); the worksheet zone sits above it.
+- Tour dots are built from the scenes present (`DOTIDS`), and scene lookups are by id, so adding or removing a scene no longer needs index edits.
+- Worksheet zone now opens the first worksheet the listing has (it used to assume `w5`).
+- `tools/make_pdf.py` puts the page right after The Numbers; `tools/optimize_folder.py` makes the small `bys_s` copy.
+- To refresh the flyer image later, replace `IMG.bys` (1224 px wide JPEG, about 390 KB) and re-run `optimize_folder.py` and `make_pdf.py`.

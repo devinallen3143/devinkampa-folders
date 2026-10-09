@@ -12,10 +12,10 @@ h = open(p, encoding='utf-8').read()
 m = re.search(r'const IMG=(\{.*?\});</script>', h, re.S)
 IMG = json.loads(m.group(1))
 for k in [k for k in IMG if k.endswith('_s')]: IMG.pop(k)
-for k in ('neigh', 'home', 'num', 'w53', 'w5', 'w20', 'proc1', 'proc2', 'high1', 'high2'):
+for k in ('neigh', 'home', 'num', 'bys', 'w53', 'w5', 'w20', 'proc1', 'proc2', 'high1', 'high2'):
     if k not in IMG: continue
     im = Image.open(io.BytesIO(base64.b64decode(IMG[k].split(',', 1)[1]))).convert('RGB')
-    W = 800 if k in ('neigh', 'home', 'num') else (640 if k in ('w53', 'w5', 'w20') else 960)
+    W = 800 if k in ('neigh', 'home', 'num', 'bys') else (640 if k in ('w53', 'w5', 'w20') else 960)
     im = im.resize((W, round(im.size[1] * W / im.size[0])), Image.LANCZOS)
     b = io.BytesIO(); im.save(b, 'JPEG', quality=82, optimize=True)
     IMG[k + '_s'] = 'data:image/jpeg;base64,' + base64.b64encode(b.getvalue()).decode()
