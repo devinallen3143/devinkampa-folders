@@ -28,8 +28,14 @@ rep('<strong>Jonathan Realtor</strong><div class="ag">Real Estate Agent <i>·</i
 rep('download="1108 Salado Dr - Listing Folder.pdf"', f'download="{street} - Listing Folder.pdf"')
 phs = '<div class="bph"></div>' if not ag.get('photo') else '<div class="bph" style="background-image:url(${IMG.agentphoto});background-size:cover;background-position:center 20%;color:transparent"></div>'
 mail = f'{email}' + (f'<br>{web}' if web else '')
-rep('<div class="bl2">Your Brokerage</div><div class="bn">Jonathan Realtor</div><div class="br">Real Estate Agent<br>License #12345</div><div class="bp"><b>C:</b>(555) 555-5555</div><div class="bm">jonathan.realtor@example.com<br>www.example.com</div><div class="bph">JR</div>',
-    f'<div class="bl2">{brok}</div><div class="bn">{name}</div><div class="br">{title}' + (f'<br>{lic}' if lic else '') + f'</div><div class="bp"><b>C:</b>{phone}</div><div class="bm">{mail}</div>{phs}')
+if ag.get('card'):  # use the agent's REAL uploaded card (straightened/enhanced by prep_card.py), not a recreated one
+    i1 = s.index('<div class="bl2">Your Brokerage</div>'); j1 = s.index('<div class="bs"></div>', i1)
+    s = s[:i1] + '<img class="agimg" src="${IMG.agentcard}" alt="">' + s[j1 + len('<div class="bs"></div>'):]
+    rep("div('bc ag',s2)", "div('bc ag real',s2)")
+    rep('.bc.ag{background:#fff;color:#14181D}', '.bc.ag{background:#fff;color:#14181D}.bc.ag.real{clip-path:none;border-radius:7px;box-shadow:0 0 0 1px rgba(20,24,29,.12)}.bc.ag.real .agimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}')
+else:
+    rep('<div class="bl2">Your Brokerage</div><div class="bn">Jonathan Realtor</div><div class="br">Real Estate Agent<br>License #12345</div><div class="bp"><b>C:</b>(555) 555-5555</div><div class="bm">jonathan.realtor@example.com<br>www.example.com</div><div class="bph">JR</div>',
+        f'<div class="bl2">{brok}</div><div class="bn">{name}</div><div class="br">{title}' + (f'<br>{lic}' if lic else '') + f'</div><div class="bp"><b>C:</b>{phone}</div><div class="bm">{mail}</div>{phs}')
 rep('tel:+15555555555', 'tel:' + digits); rep('sms:+15555555555', 'sms:' + digits); rep('mailto:jonathan.realtor@example.com', 'mailto:' + email)
 rep("t:'1108 Salado Dr, Allen, TX 75013'", "t:'" + cfg['address'] + "'")
 rep("s:'Five bedrooms, four baths, 3,147 square feet and a backyard pool with a waterfall and spa.'", "s:'" + fo['home_caption'].replace("'", "\\'") + "'")
@@ -45,7 +51,9 @@ for k in ('w53', 'w5', 'w20'):
     IMG.pop(k + '_s', None)
     if os.path.exists(f'{F}/{k}.jpg'): IMG[k] = b(f'{F}/{k}.jpg')
     else: IMG.pop(k, None)
-if ag.get('photo'): IMG['agentphoto'] = b(a.agentphoto or os.path.join(os.path.dirname(os.path.abspath(a.config)), ag['photo']))
+if ag.get('card'): IMG['agentcard'] = b(os.path.join(os.path.dirname(os.path.abspath(a.config)), ag['card']))
+else: IMG.pop('agentcard', None)
+if ag.get('photo') and not ag.get('card'): IMG['agentphoto'] = b(a.agentphoto or os.path.join(os.path.dirname(os.path.abspath(a.config)), ag['photo']))
 else: IMG.pop('agentphoto', None)
 s = s[:i0] + json.dumps(IMG) + s[i0 + n:]
 os.makedirs(os.path.join(ROOT, a.slug), exist_ok=True)

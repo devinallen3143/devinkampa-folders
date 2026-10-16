@@ -1,258 +1,259 @@
 {
- "address": "1429 Macrae Ct, Allen, TX 75013",
- "price": "$399,000",
- "facts": "3 BD · 2 BA · 1,801 SF",
- "agent": {
-  "name": "Taffney Wilson",
-  "title": "REALTOR®",
-  "brokerage": "Wilson Realty Team",
-  "phone": "469-222-6012",
-  "email": "taffneywilson@kw.com",
-  "web": "www.theteamwilson.com",
-  "photo": "agent-macrae.jpg"
- },
- "photos": {
-  "hero": "front.png",
-  "big": "staged.png",
-  "small": "kitchen.png",
-  "n1": "front.png",
-  "n2": "kitchen.png",
-  "n3": "bath.png",
-  "na": "side.png",
-  "nb": "angle.png"
- },
- "home": {
-  "hero_pos": "50% 60%",
-  "big_pos": "50% 0%",
-  "small_pos": "35% 50%",
-  "bullets": [
-   "3 bedrooms · 2 baths",
-   "1,801 square feet, one story",
-   "Freshly painted, built in 2001",
-   "Brick fireplace with gas logs",
-   "Island kitchen, gas cooktop",
-   "Walk-in pantry, breakfast bar",
-   "Office or flex room up front",
-   "Primary suite with jetted tub",
-   "New fence, sliding electric gate"
-  ],
-  "about": "A move-in-ready one-story home in Allen's Twin Creeks neighborhood, freshly painted inside and out. High ceilings and natural light fill two living areas, and the primary suite adds a jetted tub, double shower and walk-in closet."
- },
- "numbers": {
-  "pos1": "50% 55%",
-  "pos2": "50% 50%",
-  "pos3": "50% 50%",
-  "cards": [
-   {
-    "eyebrow": "Lowest cash to close",
-    "l1": "5% down +",
-    "l2": "no discount points",
-    "pay": "$3,513",
-    "rows": [
-     [
-      "Down payment",
-      "$19,950"
-     ],
-     [
-      "Discount points",
-      "$0"
-     ],
-     [
-      "Seller title credit",
-      "−$2,257"
-     ]
+  "address": "1429 Macrae Ct, Allen, TX 75013",
+  "price": "$399,000",
+  "facts": "3 BD · 2 BA · 1,801 SF",
+  "agent": {
+    "name": "Taffney Wilson",
+    "title": "REALTOR®",
+    "brokerage": "Wilson Realty Team",
+    "phone": "469-222-6012",
+    "email": "taffneywilson@kw.com",
+    "web": "www.theteamwilson.com",
+    "photo": "agent-macrae.jpg",
+    "card": "card-macrae.jpg"
+  },
+  "photos": {
+    "hero": "front.png",
+    "big": "staged.png",
+    "small": "kitchen.png",
+    "n1": "front.png",
+    "n2": "kitchen.png",
+    "n3": "bath.png",
+    "na": "side.png",
+    "nb": "angle.png"
+  },
+  "home": {
+    "hero_pos": "50% 60%",
+    "big_pos": "50% 0%",
+    "small_pos": "35% 50%",
+    "bullets": [
+      "3 bedrooms · 2 baths",
+      "1,801 square feet, one story",
+      "Freshly painted, built in 2001",
+      "Brick fireplace with gas logs",
+      "Island kitchen, gas cooktop",
+      "Walk-in pantry, breakfast bar",
+      "Office or flex room up front",
+      "Primary suite with jetted tub",
+      "New fence, sliding electric gate"
     ],
-    "cash": "$29,446"
-   },
-   {
-    "eyebrow": "Lower rate, 5% down",
-    "l1": "5% down +",
-    "l2": "discount points",
-    "pay": "$3,414",
-    "rows": [
-     [
-      "Down payment",
-      "$19,950"
-     ],
-     [
-      "Discount points",
-      "$5,845"
-     ],
-     [
-      "Seller title credit",
-      "−$2,257"
-     ]
+    "about": "A move-in-ready one-story home in Allen's Twin Creeks neighborhood, freshly painted inside and out. High ceilings and natural light fill two living areas, and the primary suite adds a jetted tub, double shower and walk-in closet."
+  },
+  "numbers": {
+    "pos1": "50% 55%",
+    "pos2": "50% 50%",
+    "pos3": "50% 50%",
+    "cards": [
+      {
+        "eyebrow": "Lowest cash to close",
+        "l1": "5% down +",
+        "l2": "no discount points",
+        "pay": "$3,513",
+        "rows": [
+          [
+            "Down payment",
+            "$19,950"
+          ],
+          [
+            "Discount points",
+            "$0"
+          ],
+          [
+            "Seller title credit",
+            "−$2,257"
+          ]
+        ],
+        "cash": "$29,446"
+      },
+      {
+        "eyebrow": "Lower rate, 5% down",
+        "l1": "5% down +",
+        "l2": "discount points",
+        "pay": "$3,414",
+        "rows": [
+          [
+            "Down payment",
+            "$19,950"
+          ],
+          [
+            "Discount points",
+            "$5,845"
+          ],
+          [
+            "Seller title credit",
+            "−$2,257"
+          ]
+        ],
+        "cash": "$35,243"
+      },
+      {
+        "eyebrow": "Lowest monthly payment",
+        "l1": "20% down +",
+        "l2": "discount points",
+        "pay": "$2,953",
+        "rows": [
+          [
+            "Down payment",
+            "$79,800"
+          ],
+          [
+            "Discount points",
+            "$4,395"
+          ],
+          [
+            "Seller title credit",
+            "−$2,257"
+          ]
+        ],
+        "cash": "$93,491"
+      }
     ],
-    "cash": "$35,243"
-   },
-   {
-    "eyebrow": "Lowest monthly payment",
-    "l1": "20% down +",
-    "l2": "discount points",
-    "pay": "$2,953",
-    "rows": [
-     [
-      "Down payment",
-      "$79,800"
-     ],
-     [
-      "Discount points",
-      "$4,395"
-     ],
-     [
-      "Seller title credit",
-      "−$2,257"
-     ]
+    "deltas": [
+      {
+        "big": "$58,248",
+        "text": "more cash to close with 20% down than with 5% down and points."
+      },
+      {
+        "big": "$461/mo",
+        "text": "lower payment with 20% down vs. 5% down and points."
+      }
     ],
-    "cash": "$93,491"
-   }
-  ],
-  "deltas": [
-   {
-    "big": "$58,248",
-    "text": "more cash to close with 20% down than with 5% down and points."
-   },
-   {
-    "big": "$461/mo",
-    "text": "lower payment with 20% down vs. 5% down and points."
-   }
-  ],
-  "disclaimer": "Estimates only, prepared 10/16/2026; not a loan approval or commitment to lend. $399,000 price, 30-year fixed conventional at 7.375% with no discount points (APR 7.639%) and at 6.990% with discount points (APR 7.407% with 5% down; 7.240% with 20% down). Payment = principal, interest, est. taxes ($632/mo), insurance ($200/mo) and mortgage insurance with 5% down ($63/mo); HOA ($33/mo) not included. Cash to close includes any discount points and a $2,257 seller title credit, which must be agreed in the contract and is subject to loan program limits. Actual rate, payment and costs could be higher; get an official Loan Estimate before choosing a loan. Devin Kampa is a loan officer, not a licensed real estate agent or Realtor, and this listing is exclusive to the listing Realtor or builder. Highlands Residential Mortgage, Ltd., NMLS #134871 (www.nmlsconsumeraccess.org). Equal Housing Lender."
- },
- "worksheets": {
-  "w53": "/root/.claude/uploads/f6b37099-f94b-51b2-acfc-3d89f62f3642/ccd76fac-1429_Macrae_Ct_FOLDER_EXAMPLE_NO_POINTS_95LTV_10.16.26.pdf",
-  "w5": "/root/.claude/uploads/f6b37099-f94b-51b2-acfc-3d89f62f3642/3a7cf608-1429_Macrae_Ct_FOLDER_EXAMPLE_95LTV_10.16.26.pdf",
-  "w20": "/root/.claude/uploads/f6b37099-f94b-51b2-acfc-3d89f62f3642/c574cdc3-1429_Macrae_Ct_FOLDER_EXAMPLE_80LTV_10.16.26.pdf"
- },
- "folder": {
-  "home_caption": "Three bedrooms, two baths and 1,801 square feet on one story, with two living areas and a flex room.",
-  "labels": {
-   "w53": "5% down with no points",
-   "w5": "5% down with points",
-   "w20": "20% down"
+    "disclaimer": "Estimates only, prepared 10/16/2026; not a loan approval or commitment to lend. $399,000 price, 30-year fixed conventional at 7.375% with no discount points (APR 7.639%) and at 6.990% with discount points (APR 7.407% with 5% down; 7.240% with 20% down). Payment = principal, interest, est. taxes ($632/mo), insurance ($200/mo) and mortgage insurance with 5% down ($63/mo); HOA ($33/mo) not included. Cash to close includes any discount points and a $2,257 seller title credit, which must be agreed in the contract and is subject to loan program limits. Actual rate, payment and costs could be higher; get an official Loan Estimate before choosing a loan. Devin Kampa is a loan officer, not a licensed real estate agent or Realtor, and this listing is exclusive to the listing Realtor or builder. Highlands Residential Mortgage, Ltd., NMLS #134871 (www.nmlsconsumeraccess.org). Equal Housing Lender."
+  },
+  "worksheets": {
+    "w53": "/root/.claude/uploads/f6b37099-f94b-51b2-acfc-3d89f62f3642/ccd76fac-1429_Macrae_Ct_FOLDER_EXAMPLE_NO_POINTS_95LTV_10.16.26.pdf",
+    "w5": "/root/.claude/uploads/f6b37099-f94b-51b2-acfc-3d89f62f3642/3a7cf608-1429_Macrae_Ct_FOLDER_EXAMPLE_95LTV_10.16.26.pdf",
+    "w20": "/root/.claude/uploads/f6b37099-f94b-51b2-acfc-3d89f62f3642/c574cdc3-1429_Macrae_Ct_FOLDER_EXAMPLE_80LTV_10.16.26.pdf"
+  },
+  "folder": {
+    "home_caption": "Three bedrooms, two baths and 1,801 square feet on one story, with two living areas and a flex room.",
+    "labels": {
+      "w53": "5% down with no points",
+      "w5": "5% down with points",
+      "w20": "20% down"
+    }
+  },
+  "neighborhood": {
+    "center": [
+      33.1195737,
+      -96.7067654
+    ],
+    "ring_dir": "nw",
+    "pos_a": "50% 70%",
+    "pos_b": "50% 60%",
+    "pois": [
+      {
+        "id": 1,
+        "kind": "park",
+        "name": "Rowlett Creek Greenbelt",
+        "dist": "0.2 mi",
+        "desc": "Creekside trails and green space",
+        "pin_px": [
+          240,
+          256
+        ]
+      },
+      {
+        "id": 2,
+        "kind": "park",
+        "name": "Terrell Recreation Center",
+        "dist": "0.4 mi",
+        "desc": "Indoor courts, track and playground",
+        "pin_px": [
+          222,
+          294
+        ]
+      },
+      {
+        "id": 3,
+        "kind": "park",
+        "name": "Spirit Park",
+        "dist": "1.0 mi",
+        "desc": "Large city park with sports fields",
+        "pin_px": [
+          346,
+          212
+        ]
+      },
+      {
+        "id": 4,
+        "kind": "shop",
+        "name": "Sprouts Farmers Market",
+        "dist": "0.7 mi",
+        "desc": "Grocery at Alma and Exchange",
+        "pin_px": [
+          322,
+          312
+        ]
+      },
+      {
+        "id": 5,
+        "kind": "shop",
+        "name": "Kroger",
+        "dist": "1.2 mi",
+        "desc": "Full grocery at Alma Dr and McDermott Dr",
+        "pin_px": [
+          308,
+          383
+        ]
+      },
+      {
+        "id": 6,
+        "kind": "eat",
+        "name": "Talia's Cafe",
+        "dist": "0.7 mi",
+        "desc": "Brunch spot at Exchange Pkwy",
+        "pin_px": [
+          346,
+          326
+        ]
+      },
+      {
+        "id": 7,
+        "kind": "eat",
+        "name": "Labi's Pizza",
+        "dist": "0.9 mi",
+        "desc": "Pizza on W Exchange Pkwy",
+        "pin_px": [
+          366,
+          298
+        ]
+      },
+      {
+        "id": 8,
+        "kind": "eat",
+        "name": "Mi Cocina",
+        "dist": "2.4 mi",
+        "desc": "Tex-Mex at Watters Creek",
+        "nopin": true
+      }
+    ],
+    "community": "Twin Creeks is a master-planned Allen neighborhood built around greenbelts, pocket parks and a championship golf course. A community pool, park and playground sit close to home, and Kerr Elementary is about 0.3 mi away. The city's Terrell Recreation Center, with indoor courts and an indoor playground, is under half a mile away.",
+    "drive_times": [
+      [
+        "SH 121 Tollway",
+        "~5 min"
+      ],
+      [
+        "US 75",
+        "~8 min"
+      ],
+      [
+        "Kerr Elementary",
+        "~2 min"
+      ],
+      [
+        "Watters Creek",
+        "~8 min"
+      ],
+      [
+        "Downtown McKinney",
+        "~15 min"
+      ],
+      [
+        "DFW Airport",
+        "~30 min"
+      ]
+    ]
   }
- },
- "neighborhood": {
-  "center": [
-   33.1195737,
-   -96.7067654
-  ],
-  "ring_dir": "nw",
-  "pos_a": "50% 70%",
-  "pos_b": "50% 60%",
-  "pois": [
-   {
-    "id": 1,
-    "kind": "park",
-    "name": "Rowlett Creek Greenbelt",
-    "dist": "0.2 mi",
-    "desc": "Creekside trails and green space",
-    "pin_px": [
-     240,
-     256
-    ]
-   },
-   {
-    "id": 2,
-    "kind": "park",
-    "name": "Terrell Recreation Center",
-    "dist": "0.4 mi",
-    "desc": "Indoor courts, track and playground",
-    "pin_px": [
-     222,
-     294
-    ]
-   },
-   {
-    "id": 3,
-    "kind": "park",
-    "name": "Spirit Park",
-    "dist": "1.0 mi",
-    "desc": "Large city park with sports fields",
-    "pin_px": [
-     346,
-     212
-    ]
-   },
-   {
-    "id": 4,
-    "kind": "shop",
-    "name": "Sprouts Farmers Market",
-    "dist": "0.7 mi",
-    "desc": "Grocery at Alma and Exchange",
-    "pin_px": [
-     322,
-     312
-    ]
-   },
-   {
-    "id": 5,
-    "kind": "shop",
-    "name": "Kroger",
-    "dist": "1.2 mi",
-    "desc": "Full grocery at Alma Dr and McDermott Dr",
-    "pin_px": [
-     308,
-     383
-    ]
-   },
-   {
-    "id": 6,
-    "kind": "eat",
-    "name": "Talia's Cafe",
-    "dist": "0.7 mi",
-    "desc": "Brunch spot at Exchange Pkwy",
-    "pin_px": [
-     346,
-     326
-    ]
-   },
-   {
-    "id": 7,
-    "kind": "eat",
-    "name": "Labi's Pizza",
-    "dist": "0.9 mi",
-    "desc": "Pizza on W Exchange Pkwy",
-    "pin_px": [
-     366,
-     298
-    ]
-   },
-   {
-    "id": 8,
-    "kind": "eat",
-    "name": "Mi Cocina",
-    "dist": "2.4 mi",
-    "desc": "Tex-Mex at Watters Creek",
-    "nopin": true
-   }
-  ],
-  "community": "Twin Creeks is a master-planned Allen neighborhood built around greenbelts, pocket parks and a championship golf course. A community pool, park and playground sit close to home, and Kerr Elementary is about 0.3 mi away. The city's Terrell Recreation Center, with indoor courts and an indoor playground, is under half a mile away.",
-  "drive_times": [
-   [
-    "SH 121 Tollway",
-    "~5 min"
-   ],
-   [
-    "US 75",
-    "~8 min"
-   ],
-   [
-    "Kerr Elementary",
-    "~2 min"
-   ],
-   [
-    "Watters Creek",
-    "~8 min"
-   ],
-   [
-    "Downtown McKinney",
-    "~15 min"
-   ],
-   [
-    "DFW Airport",
-    "~30 min"
-   ]
-  ]
- }
 }

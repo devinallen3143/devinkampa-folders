@@ -70,3 +70,9 @@ Back to front: the pre-application worksheets (1 to 3), then **Buy Before You Se
 - Three worksheets: map the keys to the order shown (w53 = 5% down no points, w5 = 5% down with points, w20 = 20% down) and set `folder.labels` in the listing JSON so the captions read correctly. `build_folder.py` handles it.
 - Agent business cards can arrive as HEIC photos: `pip install pillow-heif`, convert, crop the headshot. Agent block in the JSON (`name`, `title`, `brokerage`, `phone`, `email`, `web`, `photo`) fills flyers and the folder.
 - A virtually staged listing photo is fine on the Home flyer only if its "VIRTUALLY STAGED" label stays visible in the crop.
+
+## Agent business card = the REAL uploaded card (rule from Devin, 1429 Macrae)
+When an agent card is uploaded, the folder's left-pocket card must be THAT exact card, not a recreated look-alike.
+1. `python3 tools/flyers/prep_card.py <card.heic|jpg> tools/flyers/listings/card-<slug>.jpg [--corners TLx,TLy,TRx,TRy,BRx,BRy,BLx,BLy]` straightens, whitens and sharpens it (1400x800). Check the result by eye; pass corners if the auto crop is off.
+2. Set `"card": "card-<slug>.jpg"` in the listing's `agent` block. build_folder.py then shows the image full-bleed (IMG.agentcard) instead of the HTML recreation. Agent name/phone/email still drive the CTA buttons, cover and flyer footers.
+3. No card uploaded: keep the blank "Your Name Here" HTML card.
