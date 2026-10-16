@@ -76,3 +76,6 @@ When an agent card is uploaded, the folder's left-pocket card must be THAT exact
 1. `python3 tools/flyers/prep_card.py <card.heic|jpg> tools/flyers/listings/card-<slug>.jpg [--corners TLx,TLy,TRx,TRy,BRx,BRy,BLx,BLy]` straightens, whitens and sharpens it (1400x800). Check the result by eye; pass corners if the auto crop is off.
 2. Set `"card": "card-<slug>.jpg"` in the listing's `agent` block. build_folder.py then shows the image full-bleed (IMG.agentcard) instead of the HTML recreation. Agent name/phone/email still drive the CTA buttons, cover and flyer footers.
 3. No card uploaded: keep the blank "Your Name Here" HTML card.
+
+## Sign-in card (test phase: 4824-cedar-creek-dr only)
+`python3 tools/flyers/add_signin.py <slug> [--agent "Name"]` adds the grey sign-in card over a blurred screenshot of the open folder (idempotent; rerun after any rebuild). It posts to the Netlify endpoint (private repo devinkampa-signin, Resend email to agent + Devin). Register the folder's agent first with `tools/flyers/register_signin.py`. Do NOT add it to other folders until Devin approves. Gotchas learned: prefix every class with `so` (the folder has its own .panel/.f/.btn), never validate on blur (a layout shift mid-tap makes the tap miss the button), show errors on submit and clear on input. Add `?signin=1` to a folder URL to see the card again after signing in.
