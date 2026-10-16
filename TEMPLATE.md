@@ -1,5 +1,7 @@
 # Listing folder template
 
+> **Reference build (approved Oct 2026):** `1001-lake-cypress-ln/` (https://devinkampa.com/folder/1001-lake-cypress-ln/) is the approved look and behavior for every new folder. `template/index.html` has identical code to it; only the listing details (address, agent, flyers, captions, share text) differ. If the two ever disagree, match Lake Cypress, and do not change layout, tour order, buttons or wording unless Devin asks.
+
 `template/index.html` is the master copy of the interactive 3D listing folder (grey folder, white page).
 It is a single self-contained file: all flyers, fonts-free styling, and scripts are inside it.
 It was built from the 1108 Salado Dr folder, so that listing's details are what is currently in it.
