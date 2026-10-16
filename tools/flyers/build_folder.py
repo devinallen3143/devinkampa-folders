@@ -3,7 +3,7 @@
 
 Usage: python3 tools/flyers/build_folder.py <slug> tools/flyers/listings/<slug>.json <flyer dir with home/neigh/nums .jpg and w53/w5/w20 .jpg> [--agentphoto file.jpg]
 Then:  python3 tools/optimize_folder.py <slug> && python3 tools/make_pdf.py <slug> "<Address> - Listing Folder"
-JSON extras used here: "folder": {"home_caption": "...", "w53_label": "5% down with a 2.25% seller credit"} and "agent" (blank placeholders when absent).
+JSON extras used here: "folder": {"home_caption": "...", "w53_label": "...", "labels": {"w53": "...", "w5": "...", "w20": "..."}} and "agent" (blank placeholders when absent).
 """
 import argparse, base64, json, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -33,7 +33,8 @@ rep('<div class="bl2">Your Brokerage</div><div class="bn">Jonathan Realtor</div>
 rep('tel:+15555555555', 'tel:' + digits); rep('sms:+15555555555', 'sms:' + digits); rep('mailto:jonathan.realtor@example.com', 'mailto:' + email)
 rep("t:'1108 Salado Dr, Allen, TX 75013'", "t:'" + cfg['address'] + "'")
 rep("s:'Five bedrooms, four baths, 3,147 square feet and a backyard pool with a waterfall and spa.'", "s:'" + fo['home_caption'].replace("'", "\\'") + "'")
-rep("w53:'5% down with a 3% seller credit'", "w53:'" + fo.get('w53_label', '5% down with a 3% seller credit') + "'")
+L = {'w53': fo.get('w53_label', '5% down with a 3% seller credit'), 'w5': '5% down', 'w20': '20% down'}; L.update(fo.get('labels', {}))
+rep("const WSL={w53:'5% down with a 3% seller credit',w5:'5% down',w20:'20% down'};", "const WSL={w53:'" + L['w53'] + "',w5:'" + L['w5'] + "',w20:'" + L['w20'] + "'};")
 rep("title='1108 Salado Dr, Allen, TX 75013', text='Take a look inside the listing folder for 1108 Salado Dr.'", f"title='{cfg['address']}', text='Take a look inside the listing folder for {street}.'")
 # images
 i0 = s.index('const IMG=') + len('const IMG='); IMG, n = json.JSONDecoder().raw_decode(s[i0:])

@@ -65,3 +65,8 @@ Back to front: the pre-application worksheets (1 to 3), then **Buy Before You Se
 - "In the Community" blurb is descriptive, lifestyle-style copy (what living there feels like: pools, trails, events, schools), not a bare list. Never state the HOA dollar amount in it.
 - `build_folder.py` builds the folder from the listing JSON; agent info is real only when the JSON has an `agent` block (business card uploaded).
 - End-of-tour grey line under the CTAs (Devin, Oct 15, 2026): "Listing your home and need a custom property folder? Text 320-241-5823!" (replaces "Want your own custom listing folder?"). Applied to the template and all existing folders.
+
+## 1429 Macrae Ct (Oct 16, 2026)
+- Three worksheets: map the keys to the order shown (w53 = 5% down no points, w5 = 5% down with points, w20 = 20% down) and set `folder.labels` in the listing JSON so the captions read correctly. `build_folder.py` handles it.
+- Agent business cards can arrive as HEIC photos: `pip install pillow-heif`, convert, crop the headshot. Agent block in the JSON (`name`, `title`, `brokerage`, `phone`, `email`, `web`, `photo`) fills flyers and the folder.
+- A virtually staged listing photo is fine on the Home flyer only if its "VIRTUALLY STAGED" label stays visible in the crop.
