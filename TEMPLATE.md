@@ -64,3 +64,4 @@ Back to front: the pre-application worksheets (1 to 3), then **Buy Before You Se
 - Neighborhood flyer top photos: use a close photo of the home/lot and a community amenity (pool), not a wide neighborhood aerial; it crops better beside the title box.
 - "In the Community" blurb is descriptive, lifestyle-style copy (what living there feels like: pools, trails, events, schools), not a bare list. Never state the HOA dollar amount in it.
 - `build_folder.py` builds the folder from the listing JSON; agent info is real only when the JSON has an `agent` block (business card uploaded).
+- End-of-tour grey line under the CTAs (Devin, Oct 15, 2026): "Listing your home and need a custom property folder? Text 320-241-5823!" (replaces "Want your own custom listing folder?"). Applied to the template and all existing folders.
