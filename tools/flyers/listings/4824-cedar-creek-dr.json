@@ -1,0 +1,239 @@
+{
+ "_note": "Example listing (4824 Cedar Creek Dr). Copy to <slug>.json for a new listing. Agent block omitted = blank 'Your Name Here' placeholders (RULE: no business card => blank). Sticker ('stamp') only on a The Numbers card.",
+ "address": "4824 Cedar Creek Dr, McKinney, TX 75070",
+ "price": "$779,900",
+ "facts": "4 BD · 3 BA · 3,178 SF",
+ "agent": {},
+ "photos": {
+  "hero": "front.png",
+  "big": "pool.png",
+  "small": "kitchen.png",
+  "n1": "front.png",
+  "n2": "kitchen.png",
+  "n3": "pool.png",
+  "na": "front.png",
+  "nb": "living.png"
+ },
+ "home": {
+  "bullets": [
+   "4 bedrooms · 3 baths",
+   "3,178 square feet, two stories",
+   "Heated pool with waterfall",
+   "Island kitchen, quartz counters",
+   "Gas cooktop, walk-in pantry",
+   "Two-story family room, fireplace",
+   "Primary suite, freestanding tub",
+   "Two bedrooms down, plus a study",
+   "Three-car garage, built in 2020"
+  ],
+  "about": "A two-story home built in 2020 in the Lake Forest community of McKinney. A heated pool with a waterfall and a covered patio anchor the backyard, and the island kitchen opens to a two-story family room with a fireplace."
+ },
+ "numbers": {
+  "cards": [
+   {
+    "eyebrow": "Lowest cash to close",
+    "l1": "5% down +",
+    "l2": "2.25% seller credit",
+    "pay": "$6,289",
+    "rows": [
+     [
+      "Down payment",
+      "$38,995"
+     ],
+     [
+      "Discount points",
+      "$0"
+     ],
+     [
+      "Seller credit (2.25%)",
+      "−$17,548"
+     ]
+    ],
+    "cash": "$39,764",
+    "stamp": {
+     "left": 222,
+     "top": 990,
+     "w": 270,
+     "rot": -8,
+     "lines": [
+      "SELLER PAYS",
+      "CLOSING COSTS"
+     ]
+    }
+   },
+   {
+    "eyebrow": "Lower rate, 5% down",
+    "l1": "5% down +",
+    "l2": "seller-paid title",
+    "pay": "$6,096",
+    "rows": [
+     [
+      "Down payment",
+      "$38,995"
+     ],
+     [
+      "Discount points",
+      "$11,047"
+     ],
+     [
+      "Seller-paid title",
+      "$4,139"
+     ]
+    ],
+    "cash": "$64,126"
+   },
+   {
+    "eyebrow": "Lowest monthly payment",
+    "l1": "20% down +",
+    "l2": "seller-paid title",
+    "pay": "$5,195",
+    "rows": [
+     [
+      "Down payment",
+      "$155,980"
+     ],
+     [
+      "Discount points",
+      "$9,303"
+     ],
+     [
+      "Seller-paid title",
+      "$4,139"
+     ]
+    ],
+    "cash": "$179,069"
+   }
+  ],
+  "deltas": [
+   {
+    "big": "$139,305",
+    "text": "more cash to close with 20% down than with 5% down and a seller credit."
+   },
+   {
+    "big": "$1,094/mo",
+    "text": "lower payment with 20% down vs. 5% down and a seller credit."
+   }
+  ],
+  "disclaimer": "Estimates only, prepared 10/15/2026; not a loan approval or commitment to lend. $779,900 price, 30-year fixed conventional at 6.990% with discount points (APR 7.364% with 5% down; 7.208% with 20% down) and at 7.375% with no points (APR 7.602%) when the seller pays a 2.25% credit ($17,548) toward closing costs. Payment = principal, interest, est. taxes ($648/mo), insurance ($400/mo) and mortgage insurance with 5% down ($123/mo); HOA (listed at $235/quarter) not included. Cash to close includes discount points. Seller-paid title and the seller credit must be agreed in the contract and are subject to loan program limits. Actual rate, payment and costs could be higher; get an official Loan Estimate before choosing a loan. Devin Kampa is a loan officer, not a licensed real estate agent or Realtor, and this listing is exclusive to the listing Realtor or builder. Highlands Residential Mortgage, Ltd., NMLS #134871 (www.nmlsconsumeraccess.org). Equal Housing Lender."
+ },
+ "neighborhood": {
+  "center": [
+   33.1531,
+   -96.6777
+  ],
+  "pois": [
+   {
+    "id": 1,
+    "kind": "park",
+    "name": "Cottonwood Creek Trail",
+    "dist": "0.2 mi",
+    "desc": "2.8 miles of paved creekside trail",
+    "pin_px": [
+     300,
+     252
+    ]
+   },
+   {
+    "id": 2,
+    "kind": "park",
+    "name": "Winniford Park",
+    "dist": "0.9 mi",
+    "desc": "Park on the creek greenbelt",
+    "pin_px": [
+     263,
+     192
+    ]
+   },
+   {
+    "id": 3,
+    "kind": "park",
+    "name": "E.A. Randles Park",
+    "dist": "1.2 mi",
+    "desc": "Creekside park with trail access",
+    "pin_px": [
+     221,
+     181
+    ]
+   },
+   {
+    "id": 4,
+    "kind": "shop",
+    "name": "Walmart Supercenter",
+    "dist": "0.4 mi",
+    "desc": "Groceries and pharmacy, 6 am to 11 pm",
+    "pin_px": [
+     247,
+     262
+    ]
+   },
+   {
+    "id": 5,
+    "kind": "shop",
+    "name": "Costco Wholesale",
+    "dist": "1.1 mi",
+    "desc": "At SH 121 and Stacy Rd in Allen",
+    "pin_px": [
+     220,
+     363
+    ]
+   },
+   {
+    "id": 6,
+    "kind": "eat",
+    "name": "Sushi Go",
+    "dist": "0.4 mi",
+    "desc": "Sushi on McKinney Ranch Pkwy",
+    "pin_px": [
+     274,
+     229
+    ]
+   },
+   {
+    "id": 7,
+    "kind": "eat",
+    "name": "Black Rock Coffee Bar",
+    "dist": "0.4 mi",
+    "desc": "Specialty coffee and drinks",
+    "pin_px": [
+     222,
+     228
+    ]
+   },
+   {
+    "id": 8,
+    "kind": "eat",
+    "name": "Anamia's Tex-Mex",
+    "dist": "~3 mi",
+    "desc": "Tex-Mex on N Lake Forest Dr",
+    "nopin": true
+   }
+  ],
+  "community": "Lake Forest has an amenity center with a pool, gym and rec room, plus wooded hike-and-bike trails. Jesse McGowen Elementary is within walking distance.",
+  "drive_times": [
+   [
+    "Sam Rayburn Tollway",
+    "~4 min"
+   ],
+   [
+    "Walmart",
+    "~3 min"
+   ],
+   [
+    "Costco (Allen)",
+    "~6 min"
+   ],
+   [
+    "Downtown McKinney",
+    "~18 min"
+   ],
+   [
+    "Frisco",
+    "~20 min"
+   ],
+   [
+    "DFW Airport",
+    "~35 min"
+   ]
+  ]
+ }
+}

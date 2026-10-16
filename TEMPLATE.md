@@ -56,3 +56,6 @@ Back to front: the pre-application worksheets (1 to 3), then **Buy Before You Se
 - Flyers for new listings are built as HTML at 1224x1584 (Cormorant + Montserrat) and rendered with Playwright; Numbers fine print also states HOA when the listing has one.
 
 - **Rule (Devin, Oct 15, 2026):** red seller/closing-cost/rate-buydown stickers or stamps are applied only to The Numbers flyer, never to worksheets. If no agent business card is uploaded, fill agent fields with the examples and "Your Name Here".
+
+## Flyer generator (Oct 15, 2026)
+`tools/flyers/build_flyers.py` builds the three flyers from a listing JSON (see `tools/flyers/README.md`). Example: `tools/flyers/listings/4824-cedar-creek-dr.json`. Defaults to blank agent info; the sticker only appears on a Numbers card with a `stamp` entry.
