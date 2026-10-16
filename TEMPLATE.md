@@ -62,5 +62,5 @@ Back to front: the pre-application worksheets (1 to 3), then **Buy Before You Se
 
 ## Lessons from 1008 10th St (Oct 15, 2026)
 - Neighborhood flyer top photos: use a close photo of the home/lot and a community amenity (pool), not a wide neighborhood aerial; it crops better beside the title box.
-- "In the Community" blurb is sales copy: name the HOA dues when known and sell what they buy (pools, trails, events, schools), not a bare list.
+- "In the Community" blurb is descriptive, lifestyle-style copy (what living there feels like: pools, trails, events, schools), not a bare list. Never state the HOA dollar amount in it.
 - `build_folder.py` builds the folder from the listing JSON; agent info is real only when the JSON has an `agent` block (business card uploaded).
