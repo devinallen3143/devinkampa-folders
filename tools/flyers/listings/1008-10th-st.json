@@ -1,0 +1,227 @@
+{
+ "address": "1008 10th St, Argyle, TX 76226",
+ "price": "$419,000",
+ "facts": "3 BD · 3 BA · 2,264 SF",
+ "agent": {
+  "name": "Tiffany Simpkins",
+  "title": "REALTOR®",
+  "brokerage": "Pioneer Realty",
+  "phone": "512-298-7011",
+  "email": "SimpkinsRealEstate@gmail.com",
+  "photo": "agent.jpg",
+  "web": "www.pioneer-realty.com"
+ },
+ "photos": {
+  "hero": "front.png",
+  "big": "living.png",
+  "small": "bath.png",
+  "n1": "front.png",
+  "n2": "living.png",
+  "n3": "bath.png",
+  "na": "aerial.png",
+  "nb": "pool.png"
+ },
+ "home": {
+  "hero_pos": "50% 50%",
+  "big_pos": "50% 60%",
+  "small_pos": "45% 50%",
+  "bullets": [
+   "3 bedrooms · 3 baths",
+   "2,264 square feet, built in 2018",
+   "Upstairs bonus loft",
+   "Open floor plan, bright living area",
+   "Island kitchen, granite counters",
+   "Gas cooktop, walk-in pantry",
+   "Tankless water heater",
+   "Corner lot with two side yards",
+   "Rear-entry two-car garage"
+  ],
+  "about": "A bright, open home on a corner lot in the Harvest community of Argyle. Three bedrooms are on the main level, with a bonus loft upstairs for a game room, office or second living space. The community pool, trails and Argyle West Elementary are close by."
+ },
+ "numbers": {
+  "cards": [
+   {
+    "eyebrow": "Lowest monthly payment",
+    "l1": "20% down +",
+    "l2": "seller title credit",
+    "pay": "$3,141",
+    "rows": [
+     [
+      "Down payment",
+      "$83,800"
+     ],
+     [
+      "Discount points",
+      "$4,425"
+     ],
+     [
+      "Seller title credit",
+      "−$2,356"
+     ]
+    ],
+    "cash": "$98,354"
+   },
+   {
+    "eyebrow": "Lowest cash to close",
+    "l1": "5% down +",
+    "l2": "seller title credit",
+    "pay": "$3,625",
+    "rows": [
+     [
+      "Down payment",
+      "$20,950"
+     ],
+     [
+      "Discount points",
+      "$6,015"
+     ],
+     [
+      "Seller title credit",
+      "−$2,356"
+     ]
+    ],
+    "cash": "$37,239"
+   }
+  ],
+  "deltas": [
+   {
+    "big": "$61,116",
+    "text": "more cash to close with 20% down than with 5% down."
+   },
+   {
+    "big": "$484/mo",
+    "text": "lower payment with 20% down vs. 5% down."
+   }
+  ],
+  "disclaimer": "Estimates only, prepared 10/15/2026; not a loan approval or commitment to lend. $419,000 price, 30-year fixed conventional at 6.990% with discount points (APR 7.229% with 20% down; 7.400% with 5% down). Payment = principal, interest, est. taxes ($663/mo), insurance ($250/mo) and mortgage insurance with 5% down ($66/mo); HOA ($221/mo) not included. Cash to close includes discount points and a $2,356 seller title credit. The seller title credit must be agreed in the contract and is subject to loan program limits. Actual rate, payment and costs could be higher; get an official Loan Estimate before choosing a loan. Devin Kampa is a loan officer, not a licensed real estate agent or Realtor, and this listing is exclusive to the listing Realtor or builder. Highlands Residential Mortgage, Ltd., NMLS #134871 (www.nmlsconsumeraccess.org). Equal Housing Lender."
+ },
+ "worksheets": {
+  "w5": "/root/.claude/uploads/f6b37099-f94b-51b2-acfc-3d89f62f3642/30bd6169-1008_10th_st_FOLDER_EXAMPLE_95LTV_10.15.26.pdf",
+  "w20": "/root/.claude/uploads/f6b37099-f94b-51b2-acfc-3d89f62f3642/13d6f4d1-1008_10th_st_FOLDER_EXAMPLE_80LTV_10.15.26.pdf"
+ },
+ "neighborhood": {
+  "center": [
+   33.113124,
+   -97.225594
+  ],
+  "pois": [
+   {
+    "id": 1,
+    "kind": "park",
+    "name": "Harvest Central Park",
+    "dist": "0.3 mi",
+    "desc": "1.5-mile linear park with trails",
+    "pin_px": [
+     236,
+     262
+    ]
+   },
+   {
+    "id": 2,
+    "kind": "park",
+    "name": "Harvest Lake",
+    "dist": "0.6 mi",
+    "desc": "11-acre lake with walking paths",
+    "pin_px": [
+     232,
+     334
+    ]
+   },
+   {
+    "id": 3,
+    "kind": "park",
+    "name": "Harvest Farms",
+    "dist": "In Harvest",
+    "desc": "Garden plots and Saturday farmers market",
+    "nopin": true
+   },
+   {
+    "id": 4,
+    "kind": "shop",
+    "name": "Tom Thumb",
+    "dist": "0.8 mi",
+    "desc": "Grocery, pharmacy and Starbucks",
+    "pin_px": [
+     270,
+     358
+    ]
+   },
+   {
+    "id": 5,
+    "kind": "shop",
+    "name": "Chase Bank",
+    "dist": "0.8 mi",
+    "desc": "In Harvest Town Center at FM 407",
+    "pin_px": [
+     300,
+     386
+    ]
+   },
+   {
+    "id": 6,
+    "kind": "eat",
+    "name": "Chick-fil-A",
+    "dist": "0.7 mi",
+    "desc": "Drive-thru at Harvest Town Center",
+    "pin_px": [
+     304,
+     338
+    ]
+   },
+   {
+    "id": 7,
+    "kind": "eat",
+    "name": "Chuy's Tex-Mex",
+    "dist": "0.8 mi",
+    "desc": "Sit-down Tex-Mex at Harvest Town Center",
+    "pin_px": [
+     336,
+     360
+    ]
+   },
+   {
+    "id": 8,
+    "kind": "eat",
+    "name": "Farmhouse Coffee & Treasures",
+    "dist": "0.5 mi",
+    "desc": "Coffee in the restored Harvest farmhouse",
+    "pin_px": [
+     212,
+     300
+    ]
+   }
+  ],
+  "community": "Harvest is a 1,200-acre agrihood with three pools, a fitness barn, community gardens and miles of trails. Argyle West Elementary is about 0.4 mi from the home.",
+  "drive_times": [
+   [
+    "I-35W on-ramp",
+    "~3 min"
+   ],
+   [
+    "Tom Thumb",
+    "~3 min"
+   ],
+   [
+    "Argyle West Elem.",
+    "~2 min"
+   ],
+   [
+    "Denton",
+    "~20 min"
+   ],
+   [
+    "Alliance (Fort Worth)",
+    "~15 min"
+   ],
+   [
+    "DFW Airport",
+    "~30 min"
+   ]
+  ],
+  "ring_dir": "ne",
+  "pos_a": "50% 85%"
+ },
+ "folder": {
+  "home_caption": "Three bedrooms, three baths, 2,264 square feet and an upstairs bonus loft on a corner lot."
+ }
+}

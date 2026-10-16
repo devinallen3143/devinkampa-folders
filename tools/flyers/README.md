@@ -24,3 +24,8 @@ Map = OpenStreetMap tiles (only tile.openstreetmap.org is reachable from the san
 
 ## After flyers
 Copy home/nums/neigh/w* into the folder IMG keys per TEMPLATE.md, run `tools/optimize_folder.py <slug>` and `tools/make_pdf.py`, push once.
+
+## Folder in one step
+    python3 tools/flyers/build_folder.py <slug> tools/flyers/listings/<slug>.json <flyer dir> [--agentphoto file.jpg]
+Swaps title, cover, agent card/CTAs (real agent only if the listing JSON has an `agent` block), captions, share text and the IMG keys (only worksheets that exist), then run `tools/optimize_folder.py <slug>` and `tools/make_pdf.py <slug> "<Address> - Listing Folder"`.
+`folder.home_caption` and optional `folder.w53_label` in the JSON feed the captions. `neighborhood.ring_dir: "ne"` moves ring labels when pins crowd the SE.
