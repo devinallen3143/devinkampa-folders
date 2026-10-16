@@ -48,3 +48,10 @@ Back to front: the pre-application worksheets (1 to 3), then **Buy Before You Se
 - Worksheet zone now opens the first worksheet the listing has (it used to assume `w5`).
 - `tools/make_pdf.py` puts the page right after The Numbers; `tools/optimize_folder.py` makes the small `bys_s` copy.
 - To refresh the flyer image later, replace `IMG.bys` (1224 px wide JPEG, about 390 KB) and re-run `optimize_folder.py` and `make_pdf.py`.
+
+## Updates from 4824 Cedar Creek Dr (Oct 15, 2026)
+- **Highlands disclaimer footer:** `#legal` is now a centered line at the bottom of the page on desktop (12px, up to 920px wide) and phone (10px, full width, 2-3 lines); phone `#bar` and `#cap` sit higher so nothing overlaps. Already applied to `template/index.html` and the Cedar Creek folder. Lake Cypress, Salado and Greymoore still have the older small right-aligned version.
+- **Seller-credit worksheet (`w53`):** its label is `WSL.w53` ("5% down with a 2.25% seller credit" for Cedar Creek; change the percent per listing, search for "seller credit"). The `w53` page image carries a red "Seller pays closing costs" starburst sticker (bottom right), and The Numbers card for that scenario carries the same sticker on the cash-to-close box.
+- **No agent email:** when the listing agent's email is unknown, delete the agent `Email` button in the end CTAs (do not leave the placeholder `mailto:`), and put the brokerage office phone on the card's second contact line.
+- **No agent photo:** the business card shows initials in the grey tile (no `agentphoto` key); flyers show an initials circle. Replace both when the agent's card photo arrives.
+- Flyers for new listings are built as HTML at 1224x1584 (Cormorant + Montserrat) and rendered with Playwright; Numbers fine print also states HOA when the listing has one.
