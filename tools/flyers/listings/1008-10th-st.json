@@ -18,8 +18,8 @@
   "n1": "front.png",
   "n2": "living.png",
   "n3": "bath.png",
-  "na": "aerial.png",
-  "nb": "pool.png"
+  "na": "aerial2.png",
+  "nb": "pool2.png"
  },
  "home": {
   "hero_pos": "50% 50%",
@@ -191,7 +191,7 @@
     ]
    }
   ],
-  "community": "Harvest is a 1,200-acre agrihood with three pools, a fitness barn, community gardens and miles of trails. Argyle West Elementary is about 0.4 mi from the home.",
+  "community": "For $221 a month, life in Harvest feels like a resort: three pools, a fitness barn, an 11-acre lake with walking paths, a 1.5-mile linear park, community gardens and a Saturday farmers market, plus year-round neighbor events like goat yoga and the snow slide. Argyle West Elementary is about 0.4 mi from your front door.",
   "drive_times": [
    [
     "I-35W on-ramp",
@@ -219,7 +219,8 @@
    ]
   ],
   "ring_dir": "ne",
-  "pos_a": "50% 85%"
+  "pos_a": "50% 55%",
+  "pos_b": "50% 95%"
  },
  "folder": {
   "home_caption": "Three bedrooms, three baths, 2,264 square feet and an upstairs bonus loft on a corner lot."
