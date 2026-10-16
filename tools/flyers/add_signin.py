@@ -74,9 +74,15 @@ HTML = '''<div id="so" role="dialog" aria-modal="true" aria-labelledby="so-h"><d
 JS = '''<script id="so-js">(function(){
 var EP="__EP__",SLUG="__SLUG__",K="so:"+SLUG,box=document.getElementById("so");if(!box)return;
 function get(){try{return localStorage.getItem(K)}catch(e){return null}}function set(){try{localStorage.setItem(K,String(Date.now()))}catch(e){}}
-try{if(/[?&]signin=1\\b/.test(location.search))localStorage.removeItem(K)}catch(e){}
-function close(){set();box.classList.add("soout");setTimeout(function(){if(box.parentNode)box.parentNode.removeChild(box);var c=document.getElementById("so-css");if(c)c.parentNode.removeChild(c)},520)}
-if(get()){box.parentNode.removeChild(box);var c0=document.getElementById("so-css");if(c0)c0.parentNode.removeChild(c0);return}
+var KS="so-skip:"+SLUG,root=document.documentElement;
+function sk(){try{return sessionStorage.getItem(KS)}catch(e){return null}}
+try{if(/[?&]signin=1\\b/.test(location.search)){localStorage.removeItem(K);sessionStorage.removeItem(KS)}}catch(e){}
+function drop(){if(box.parentNode)box.parentNode.removeChild(box);var c=document.getElementById("so-css");if(c)c.parentNode.removeChild(c)}
+function close(){box.classList.add("soout");setTimeout(drop,520)}
+// Save (PDF download) is only for people who signed in. Anyone who hasn't (skipped, or not yet asked) has no Save button.
+if(!get()){var ns=document.createElement("style");ns.id="so-ns";ns.textContent=".so-nosave #dlB{display:none!important}";document.head.appendChild(ns);root.classList.add("so-nosave")}
+function signedIn(){set();root.classList.remove("so-nosave");close()}
+if(get()||sk()){drop();return}
 var form=document.getElementById("so-f"),$=function(id){return document.getElementById(id)};
 function row(k){return form.querySelector('[data-k="'+k+'"]')}
 function bad(k,m){var r=row(k);r.classList.add("sobad");r.querySelector(".som").textContent=m;return false}
@@ -94,15 +100,15 @@ if(TYPO[m[1]])return bad("email","Did you mean "+v.split("@")[0]+"@"+TYPO[m[1]]+
 // no validate-on-blur: an error appearing/disappearing mid-tap shifts the layout and makes the tap miss the button. Errors show on submit and clear as the person types.
 ["name","phone","email"].forEach(function(k){row(k).querySelector("input").addEventListener("input",function(){row(k).classList.remove("sobad")})});
 $("so-p").addEventListener("input",function(e){var d=e.target.value.replace(/\\D/g,"").replace(/^1(?=\\d{10})/,"").slice(0,10);e.target.value=d.length>6?"("+d.slice(0,3)+") "+d.slice(3,6)+"-"+d.slice(6):d.length>3?"("+d.slice(0,3)+") "+d.slice(3):d});
-$("so-skip").addEventListener("click",close);
+$("so-skip").addEventListener("click",function(){try{sessionStorage.setItem(KS,"1")}catch(e){}close()});
 form.addEventListener("submit",function(ev){ev.preventDefault();var r=[vName(),vPhone(),vEmail()];if(r.indexOf(false)>-1)return;
 var btn=form.querySelector(".sob");btn.disabled=true;btn.textContent="Signing in\\u2026";
 var body=JSON.stringify({slug:SLUG,name:$("so-n").value.trim(),phone:$("so-p").value,email:$("so-e").value.trim(),consent:true,hp:$("so-hp").value});
 fetch(EP,{method:"POST",headers:{"Content-Type":"application/json"},body:body}).then(function(res){
  if(res.status===422){return res.json().then(function(j){var e=j.errors||{};btn.disabled=false;btn.textContent="Sign in and view the folder";
   if(e.name)bad("name",e.name);if(e.phone)bad("phone",e.phone);if(e.email)bad("email",e.email)})}
- btn.textContent="Thank you";setTimeout(close,500)
-}).catch(function(){btn.textContent="Thank you";setTimeout(close,500)})});
+ btn.textContent="Thank you";setTimeout(signedIn,500)
+}).catch(function(){btn.textContent="Thank you";setTimeout(signedIn,500)})});
 })();</script>'''.replace('__EP__', a.endpoint).replace('__SLUG__', a.slug)
 block = '<!--SIGNIN-START-->' + CSS + HTML + JS + '<!--SIGNIN-END-->'
 i = html.rindex('</body>'); html = html[:i] + block + html[i:]
