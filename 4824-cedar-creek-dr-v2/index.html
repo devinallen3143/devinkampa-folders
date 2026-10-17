@@ -227,6 +227,14 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .cf .addr span{margin-top:22px;color:rgba(255,255,255,.7)}
 .cf .agname{position:absolute;left:0;right:0;bottom:46px;text-align:center;font-size:11.5px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.55);padding-left:.3em}
 #cap p:empty{display:none}
+
+#nudge{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:4;width:min(270px,calc(100vw - 36px));padding:14px 16px 14px;border-radius:16px;background:#fff;border:1px solid rgba(0,0,0,.10);box-shadow:0 12px 34px rgba(20,22,26,.20),0 2px 6px rgba(20,22,26,.08);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .45s ease,transform .45s ease}
+#nudge.on{opacity:1;transform:none;pointer-events:auto}
+#nudge b{display:block;font-size:15px;font-weight:600;letter-spacing:-.005em;padding-right:22px}
+#nudge span{display:block;margin-top:3px;font-size:13px;line-height:1.35;color:var(--ink2)}
+#nudge a.go{display:inline-flex;margin-top:10px;min-height:36px;align-items:center;padding:0 16px;border-radius:999px;background:var(--accent);color:#fff;font-size:14px;font-weight:600;text-decoration:none}
+#nudge button{position:absolute;right:6px;top:6px;width:28px;height:28px;border:0;border-radius:50%;background:transparent;color:#8a8f98;font-size:18px;line-height:1;cursor:pointer}
+#nudge button:hover{background:rgba(127,127,127,.14)}
 </style>
 
 
@@ -269,6 +277,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
   
   <div id="toast" role="status" aria-live="polite"></div>
+  <div id="nudge" role="dialog" aria-label="Home value"><button type="button" id="nudgeX" aria-label="Dismiss">&times;</button><b>Want your home's value?</b><span>Text John for a quick estimate.</span><a class="go" href="sms:+15555555555?&body=Hi%20John%2C%20I%27d%20like%20to%20know%20what%20my%20home%20is%20worth.">Text John</a></div>
   <div id="top">
     <button class="btn hide" id="flipB" type="button">Flip over</button>
     <button class="btn hide" id="fullB" type="button">View full size</button>
@@ -544,6 +553,7 @@ const show=(id,on)=>$(id).classList.toggle('hide',!on);
 function ui(sc){
   const closed=sc.id==='closed', done=!!sc.explore, exFocus=focusMode, pres=!closed&&!done&&!exFocus;
   setCap(sc.t,sc.s,sc.x);
+  nudge(done&&!exFocus);
   show('#openB',closed);
   show('#contact',exFocus&&sc.id==='card');
   show('#endcta',done&&!exFocus);
@@ -556,6 +566,14 @@ function ui(sc){
   show('#flipB',exFocus&&sc.focus&&items[sc.focus].type==='tri');
   document.querySelectorAll('#dots button').forEach((b,i)=>b.classList.toggle('on',sc.dot===i));
 }
+/* "home value" prompt: appears ~5s after the tour ends (or after skipping to the end); closes with X and stays closed for the visit */
+let nudgeT=null, nudgeGone=false;
+function nudge(on){
+  const n=$('#nudge'); clearTimeout(nudgeT);
+  if(!on||nudgeGone){ n.classList.remove('on'); return; }
+  nudgeT=setTimeout(()=>n.classList.add('on'),5000);
+}
+$('#nudgeX').onclick=()=>{ nudgeGone=true; $('#nudge').classList.remove('on'); };
 const dotsEl=$('#dots');
 DOTS.forEach((si,i)=>{ const b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Go to item '+(i+1)); b.onclick=()=>go(si); dotsEl.appendChild(b); });
 
@@ -671,7 +689,7 @@ addEventListener('pointermove',e=>{
 });
 addEventListener('resize',()=>{ if(cur.dyn) Object.assign(cur,wsScene()); setPerspective(); stage.classList.add('inst'); applyCam(cur); void stage.offsetWidth; requestAnimationFrame(()=>stage.classList.remove('inst')); });
 
-if(window.top!==window.self){ document.querySelectorAll('#contact a,#endcta a,#dlB').forEach(a=>{a.target='_blank';a.rel='noopener'}); }
+if(window.top!==window.self){ document.querySelectorAll('#contact a,#endcta a,#nudge a,#dlB').forEach(a=>{a.target='_blank';a.rel='noopener'}); }
 setPerspective(); setPP();
 apply(SC[0],true);
 window.__dbg={go,SC,items,apply,get cur(){return cur}};
