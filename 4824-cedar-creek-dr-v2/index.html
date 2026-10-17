@@ -556,7 +556,7 @@ const show=(id,on)=>$(id).classList.toggle('hide',!on);
 function ui(sc){
   const closed=sc.id==='closed', done=!!sc.explore, exFocus=focusMode, pres=!closed&&!done&&!exFocus;
   setCap(sc.t,sc.s,sc.x);
-  nudge(done&&!exFocus);
+  nudge(!closed);
   $('#legal').classList.toggle('hide',!(done||exFocus));
   show('#openB',closed);
   show('#contact',exFocus&&sc.id==='card');
@@ -570,14 +570,20 @@ function ui(sc){
   show('#flipB',exFocus&&sc.focus&&items[sc.focus].type==='tri');
   document.querySelectorAll('#dots button').forEach((b,i)=>b.classList.toggle('on',sc.dot===i));
 }
-/* "home value" prompt: appears ~5s after the tour ends (or after skipping to the end); closes with X and stays closed for the visit */
-let nudgeT=null, nudgeGone=false;
-function nudge(on){
-  const n=$('#nudge'); clearTimeout(nudgeT);
-  if(!on||nudgeGone){ n.classList.remove('on'); return; }
-  nudgeT=setTimeout(()=>n.classList.add('on'),5000);
+/* "home value" prompt: first shows 5s after the folder is opened; after the 1st close it returns 10s later, after the 2nd close 25s later, and after the 3rd close it stays away */
+const NUDGE_DELAYS=[5000,10000,25000]; let nudgeT=null, nudgeCloses=0, nudgeWant=false;
+function nudgeShowLater(){
+  clearTimeout(nudgeT);
+  if(!nudgeWant||nudgeCloses>=NUDGE_DELAYS.length) return;
+  nudgeT=setTimeout(()=>{ if(nudgeWant) $('#nudge').classList.add('on'); },NUDGE_DELAYS[nudgeCloses]);
 }
-$('#nudgeX').onclick=()=>{ nudgeGone=true; $('#nudge').classList.remove('on'); };
+function nudge(on){
+  if(on===nudgeWant) return;
+  nudgeWant=on; clearTimeout(nudgeT);
+  if(!on){ $('#nudge').classList.remove('on'); return; }
+  nudgeShowLater();
+}
+$('#nudgeX').onclick=()=>{ nudgeCloses++; $('#nudge').classList.remove('on'); nudgeShowLater(); };
 const dotsEl=$('#dots');
 DOTS.forEach((si,i)=>{ const b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Go to item '+(i+1)); b.onclick=()=>go(si); dotsEl.appendChild(b); });
 
