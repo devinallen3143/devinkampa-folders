@@ -555,7 +555,7 @@ let capKey='';
 function setCap(t,s,x){
   x=x||''; const k=t+'|'+s+'|'+x; if(k===capKey) return; capKey=k;
   capTxt.classList.add('out');
-  setTimeout(()=>{capT.innerHTML=t.replace(/^Welcome to/,'<span class="script">Welcome to<svg class="sharpie" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="shf" x="-5%" y="-40%" width="110%" height="180%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter></defs><g filter="url(#shf)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path class="s1" d="M5 9 C60 38 200 40 295 5" stroke-width="11"/></g></svg></span>');capS.textContent=s;capX.textContent=x;capTxt.classList.remove('out')},300);
+  setTimeout(()=>{capT.innerHTML=t.replace(/^Welcome to/,'<span class="script">Welcome to<svg class="sharpie" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="shf" x="-5%" y="-40%" width="110%" height="180%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter></defs><g filter="url(#shf)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path class="s1" d="M5 25 C80 14 215 13 295 21" stroke-width="11"/></g></svg></span>');capS.textContent=s;capX.textContent=x;capTxt.classList.remove('out')},300);
 }
 const show=(id,on)=>$(id).classList.toggle('hide',!on);
 function ui(sc){
