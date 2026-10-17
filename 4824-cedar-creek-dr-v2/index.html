@@ -279,7 +279,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
     <a class="btn" id="dlB" href="folder.pdf" download="4824 Cedar Creek Dr - Listing Folder.pdf" target="_blank" rel="noopener" aria-label="Download the folder as a PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 10.5L12 15l4.5-4.5M5 19h14"/></svg><span>Save</span></a>
   </div>
   
-  <div id="legal">Listing your home and need a custom property folder? Text <a href="sms:+13202415823">320-241-5823</a>!</div>
+  <div id="legal" class="hide">Listing your home and need a custom property folder? Text <a href="sms:+13202415823">320-241-5823</a>!</div>
   <div id="toast" role="status" aria-live="polite"></div>
   <div id="nudge" role="dialog" aria-label="Home value"><button type="button" id="nudgeX" aria-label="Dismiss">&times;</button><b>Want your home's value?</b><span>Text John for a quick estimate.</span><a class="go" href="sms:+15555555555?&body=Hi%20John%2C%20I%27d%20like%20to%20know%20what%20my%20home%20is%20worth.">Text John</a></div>
   <div id="top">
@@ -557,6 +557,7 @@ function ui(sc){
   const closed=sc.id==='closed', done=!!sc.explore, exFocus=focusMode, pres=!closed&&!done&&!exFocus;
   setCap(sc.t,sc.s,sc.x);
   nudge(done&&!exFocus);
+  $('#legal').classList.toggle('hide',!(done||exFocus));
   show('#openB',closed);
   show('#contact',exFocus&&sc.id==='card');
   show('#endcta',done&&!exFocus);
