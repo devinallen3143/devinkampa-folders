@@ -230,6 +230,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 
 #nudge{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:4;width:min(270px,calc(100vw - 36px));padding:14px 16px 14px;border-radius:16px;background:#fff;border:1px solid rgba(0,0,0,.10);box-shadow:0 12px 34px rgba(20,22,26,.20),0 2px 6px rgba(20,22,26,.08);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .45s ease,transform .45s ease}
 #nudge.on{opacity:1;transform:none;pointer-events:auto}
+@media (max-width:640px){#stage.is-closed ~ #ui #cap{bottom:calc(46px + env(safe-area-inset-bottom,0px))}}
 @media (max-width:640px){#nudge{right:12px;bottom:calc(40px + env(safe-area-inset-bottom,0px));width:auto;max-width:calc(100vw - 24px);padding:9px 12px;display:flex;align-items:center;gap:12px}#nudge span{display:none!important}#nudge b{padding-right:0!important;font-size:14px!important;white-space:nowrap}#nudge a.go{margin-top:0;white-space:nowrap;min-height:34px}#nudge button{z-index:2;right:-7px;top:-9px;background:#fff;border:1px solid rgba(0,0,0,.14);width:24px;height:24px;font-size:16px}}
 #nudge b{display:block;font-size:15px;font-weight:600;letter-spacing:-.005em;padding-right:22px}
 #nudge span{display:block;margin-top:3px;font-size:13px;line-height:1.35;color:var(--ink2)}
@@ -487,7 +488,7 @@ function capSpace(sc){
   const vw=innerWidth, vh=innerHeight, w=Math.min(vw*.92,680), fs=Math.min(17,Math.max(14,vw*.017)), tfs=Math.min(32,Math.max(22,vw*.031));
   const cpl=Math.floor(w/(fs*.5)), lines=Math.ceil((sc.s||'').length/cpl)+(sc.x?Math.ceil(sc.x.length/Math.floor(cpl*.88))*1.15+.5:0);
   const cta=sc.explore?(vw<640?236:(vh<520?88:132)):((sc.id==='closed'||sc.id==='card')?62:0);
-  return Math.round((vw<640?78:84)+tfs*1.12+8+lines*fs*1.4+cta+18);
+  return Math.round((vw<640?78:84)+tfs*1.12+8+lines*fs*1.4+cta+18)-((vw<640&&sc.id==='closed')?62:0);
 }
 function applyCam(sc,ms){
   const vw=innerWidth, vh=innerHeight, P=perspective;
