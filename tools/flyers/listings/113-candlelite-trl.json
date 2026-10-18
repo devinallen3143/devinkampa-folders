@@ -1,0 +1,242 @@
+{
+ "address": "113 Candlelite Trl, Heath, TX 75032",
+ "price": "$659,900",
+ "facts": "4 BD · 4 BA · 2,643 SF",
+ "agent": {
+  "name": "Nyia Njamfa",
+  "title": "REALTOR® · GRI",
+  "brokerage": "Allie Beth Allman & Associates",
+  "phone": "214-494-9433",
+  "email": "nyia@northtexashomes.com",
+  "web": "northtexashomes.com",
+  "card": "card-candlelite.jpg",
+  "logo": "logo-allie-beth-allman.png"
+ },
+ "photos": {
+  "hero": "front.png",
+  "big": "back.png",
+  "small": "kitchen.png",
+  "n1": "kitchen.png",
+  "n2": "bath.png",
+  "n3": "living.png",
+  "na": "front.png",
+  "nb": "back.png"
+ },
+ "home": {
+  "hero_pos": "50% 60%",
+  "bullets": [
+   "4 bedrooms · 4 baths",
+   "2,643 square feet, one story",
+   "Private 0.46-acre wooded lot",
+   "Island kitchen, granite counters",
+   "Double oven, built-in refrigerator",
+   "Two living areas, fireplace",
+   "Primary suite with sitting area",
+   "Owned solar panels",
+   "Cedar greenhouse and RV parking"
+  ],
+  "about": "A one-story home built in 1997 on a private, tree-lined lot in Heath's Candlelite Park, with a circular drive and owned solar panels. The island kitchen opens to the living area, and the backyard holds a custom cedar greenhouse and a TuffShed."
+ },
+ "numbers": {
+  "pos1": "50% 55%",
+  "pos2": "50% 50%",
+  "pos3": "50% 50%",
+  "cards": [
+   {
+    "eyebrow": "Lowest cash to close",
+    "l1": "5% down +",
+    "l2": "no discount points",
+    "pay": "$5,616",
+    "rows": [
+     [
+      "Down payment",
+      "$32,995"
+     ],
+     [
+      "Discount points",
+      "$0"
+     ],
+     [
+      "Seller title credit",
+      "−$3,546"
+     ]
+    ],
+    "cash": "$46,446"
+   },
+   {
+    "eyebrow": "Lower rate, 5% down",
+    "l1": "5% down +",
+    "l2": "discount points",
+    "pay": "$5,453",
+    "rows": [
+     [
+      "Down payment",
+      "$32,995"
+     ],
+     [
+      "Discount points",
+      "$9,404"
+     ],
+     [
+      "Seller title credit",
+      "−$3,546"
+     ]
+    ],
+    "cash": "$55,770"
+   },
+   {
+    "eyebrow": "Lowest monthly payment",
+    "l1": "20% down +",
+    "l2": "discount points",
+    "pay": "$4,691",
+    "rows": [
+     [
+      "Down payment",
+      "$131,980"
+     ],
+     [
+      "Discount points",
+      "$6,863"
+     ],
+     [
+      "Seller title credit",
+      "−$3,546"
+     ]
+    ],
+    "cash": "$151,987"
+   }
+  ],
+  "deltas": [
+   {
+    "big": "$96,217",
+    "text": "more cash to close with 20% down than with 5% down and points."
+   },
+   {
+    "big": "$762/mo",
+    "text": "lower payment with 20% down vs. 5% down and points."
+   }
+  ],
+  "disclaimer": "Estimates only, prepared 10/18/2026; not a loan approval or commitment to lend. $659,900 price, 30-year fixed conventional at 7.375% with no discount points (APR 7.609%) and at 6.990% with discount points (APR 7.372% with 5% down; 7.197% with 20% down). Payment = principal, interest, est. taxes ($782/mo), insurance ($400/mo) and mortgage insurance with 5% down ($104/mo); no HOA is listed for this property. Cash to close includes any discount points and a $3,546 seller title credit, which must be agreed in the contract and is subject to loan program limits. Actual rate, payment and costs could be higher; get an official Loan Estimate before choosing a loan. Devin Kampa is a loan officer, not a licensed real estate agent or Realtor, and this listing is exclusive to the listing Realtor or builder. Highlands Residential Mortgage, Ltd., NMLS #134871 (www.nmlsconsumeraccess.org). Equal Housing Lender."
+ },
+ "worksheets": {
+  "w53": "/root/.claude/uploads/f6b37099-f94b-51b2-acfc-3d89f62f3642/5ac29c86-113_Candlelite_Trl_FOLDER_EXAMPLE2_95LTV_10.18.26.pdf",
+  "w5": "/root/.claude/uploads/f6b37099-f94b-51b2-acfc-3d89f62f3642/48a3c7a8-113_Candlelite_Trl_FOLDER_EXAMPLE_95LTV_10.18.26.pdf",
+  "w20": "/root/.claude/uploads/f6b37099-f94b-51b2-acfc-3d89f62f3642/1798f0ba-113_Candlelite_Trl_FOLDER_EXAMPLE_80LTV_10.18.26.pdf"
+ },
+ "folder": {
+  "home_caption": "Four bedrooms, four baths and 2,643 square feet on one story, with two living areas, a cedar greenhouse and owned solar.",
+  "labels": {
+   "w53": "5% down with no points",
+   "w5": "5% down with points",
+   "w20": "20% down"
+  }
+ },
+ "neighborhood": {
+  "center": [
+   32.836142,
+   -96.500229
+  ],
+  "ring_dir": "ne",
+  "pos_a": "50% 60%",
+  "pos_b": "50% 50%",
+  "pois": [
+   {
+    "id": 1,
+    "kind": "park",
+    "name": "Terry Park",
+    "lat": 32.83939,
+    "lon": -96.50614,
+    "desc": "Lakeside park with boat ramp and trails"
+   },
+   {
+    "id": 2,
+    "kind": "park",
+    "name": "Towne Center Park",
+    "dist": "1.7 mi",
+    "desc": "Playgrounds, pickleball courts and event lawn",
+    "pin_px": [
+     430,
+     274
+    ]
+   },
+   {
+    "id": 3,
+    "kind": "park",
+    "name": "The Reserve Nature Trails",
+    "dist": "In Heath",
+    "desc": "70+ acres of signed nature trails",
+    "nopin": true
+   },
+   {
+    "id": 4,
+    "kind": "shop",
+    "name": "Tom Thumb",
+    "dist": "1.7 mi",
+    "desc": "Grocery at Laurence Dr and FM 549",
+    "pin_px": [
+     426,
+     243
+    ]
+   },
+   {
+    "id": 5,
+    "kind": "shop",
+    "name": "Kroger",
+    "dist": "~4 mi",
+    "desc": "Full grocery and pharmacy on Ridge Rd",
+    "nopin": true
+   },
+   {
+    "id": 6,
+    "kind": "eat",
+    "name": "Standard Service",
+    "dist": "~3 mi",
+    "desc": "Casual American, Sunday brunch on Ridge Rd",
+    "nopin": true
+   },
+   {
+    "id": 7,
+    "kind": "eat",
+    "name": "The Oar House",
+    "dist": "~3 mi",
+    "desc": "Italian near The Harbor Rockwall",
+    "nopin": true
+   },
+   {
+    "id": 8,
+    "kind": "eat",
+    "name": "The 501",
+    "dist": "~5 mi",
+    "desc": "Lakefront American at The Yacht Club",
+    "nopin": true
+   }
+  ],
+  "community": "Candlelite Park sits in Heath on the shore of Lake Ray Hubbard, a quiet pocket of tree-lined lots and wooded views. Terry Park, with a boat ramp and lakeside trails, is under half a mile away, and Towne Center Park adds playgrounds, pickleball courts and an event lawn. Rockwall ISD schools serve the neighborhood.",
+  "drive_times": [
+   [
+    "I-30",
+    "~10 min"
+   ],
+   [
+    "Rockwall-Heath High",
+    "~5 min"
+   ],
+   [
+    "The Harbor Rockwall",
+    "~10 min"
+   ],
+   [
+    "Downtown Rockwall",
+    "~15 min"
+   ],
+   [
+    "Downtown Dallas",
+    "~35 min"
+   ],
+   [
+    "DFW Airport",
+    "~40 min"
+   ]
+  ]
+ }
+}

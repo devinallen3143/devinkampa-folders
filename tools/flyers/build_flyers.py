@@ -70,7 +70,11 @@ def footer(cx, top):
     a = dict(AGENT_BLANK); a.update(cx.cfg.get('agent') or {})  # RULE: no business card uploaded => blank agent
     line1 = a.get('line1') or f"{a['title']} · {a['brokerage']}"
     photo = f"background-image:url({cx.img(a['photo'])})" if a.get('photo') else ''
-    agent = f'<div class="fb" style="left:0"><div class="av" style="{photo}"></div><div class="ft"><div class="nm">{a["name"]}</div><div class="fl">{line1}</div><div class="fl b">{a["phone"]}</div><div class="fl">{a["email"]}</div></div></div>'
+    # agent.logo (brokerage logo cropped from the uploaded card): shown under the contact lines like Devin's logo; with no agent photo the circle is dropped and the text starts at the left edge
+    logo = f'<img src="{cx.img(a["logo"])}" style="height:44px;margin-top:8px;display:block">' if a.get('logo') else ''
+    av = f'<div class="av" style="{photo}"></div>' if (a.get('photo') or not a.get('logo')) else ''
+    ftl = '' if av else ' style="left:0"'
+    agent = f'<div class="fb" style="left:0">{av}<div class="ft"{ftl}><div class="nm">{a["name"]}</div><div class="fl">{line1}</div><div class="fl b">{a["phone"]}</div><div class="fl">{a["email"]}</div>{logo}</div></div>'
     dev = f'<div class="fb" style="left:578px"><div class="av" style="background-image:url({cx.lib("cardphoto.jpg")});background-color:#eef1f4"></div><div class="ft"><div class="nm">Devin Kampa</div><div class="fl">Loan Officer · NMLS #2532480</div><div class="fl b">320-241-5823</div><div class="fl d">dkampa@highlandsmortgage.com</div><img src="{cx.lib("logo.png")}" style="width:152px;margin-top:8px;display:block"></div></div>'
     return f'<div class="foot" style="top:{top}px">{agent}<div class="div"></div>{dev}</div>'
 
