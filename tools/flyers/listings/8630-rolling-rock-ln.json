@@ -1,0 +1,234 @@
+{
+ "address": "8630 Rolling Rock Ln, Dallas, TX 75238",
+ "price": "$649,900",
+ "facts": "4 BD · 4 BA · 2,083 SF",
+ "agent": {
+  "name": "Nyia Njamfa",
+  "title": "REALTOR® · GRI",
+  "brokerage": "Allie Beth Allman & Associates",
+  "phone": "214-494-9433",
+  "email": "nyia@northtexashomes.com",
+  "web": "northtexashomes.com",
+  "card": "card-candlelite.jpg",
+  "logo": "logo-allie-beth-allman.png"
+ },
+ "photos": {
+  "hero": "front.png",
+  "big": "kitchen.png",
+  "small": "putting.png",
+  "n1": "living.png",
+  "n2": "front2.png",
+  "n3": "bath.png",
+  "na": "front.png",
+  "nb": "front2.png"
+ },
+ "home": {
+  "hero_pos": "50% 60%",
+  "bullets": [
+   "4 bedrooms · 4 baths",
+   "2,083 square feet, one story",
+   "Mid-century modern, built 1955",
+   "Walls of windows, hardwood floors",
+   "Island kitchen, quartz counters",
+   "Gas cooktop, breakfast bar",
+   "Primary suite with soaking tub",
+   "Back house with a full bath",
+   "Turfed yard with putting green"
+  ],
+  "about": "A beautifully updated mid-century modern home in Lake Highlands' Lakeland Hills, with walls of windows, hardwood floors and a painted-brick accent wall. The island kitchen opens to the living area, and the turfed backyard adds a putting green and a back house with its own full bath."
+ },
+ "numbers": {
+  "pos1": "50% 50%",
+  "pos2": "50% 50%",
+  "pos3": "50% 50%",
+  "cards": [
+   {
+    "eyebrow": "Lowest cash to close",
+    "l1": "5% down +",
+    "l2": "no discount points",
+    "pay": "$5,881",
+    "rows": [
+     [
+      "Down payment",
+      "$32,495"
+     ],
+     [
+      "Discount points",
+      "$0"
+     ],
+     [
+      "Seller title credit",
+      "−$3,497"
+     ]
+    ],
+    "cash": "$46,431"
+   },
+   {
+    "eyebrow": "Lowest monthly payment",
+    "l1": "20% down +",
+    "l2": "no discount points",
+    "pay": "$5,061",
+    "rows": [
+     [
+      "Down payment",
+      "$129,980"
+     ],
+     [
+      "Discount points",
+      "$0"
+     ],
+     [
+      "Seller title credit",
+      "−$3,546"
+     ]
+    ],
+    "cash": "$143,603"
+   }
+  ],
+  "deltas": [
+   {
+    "big": "$97,172",
+    "text": "more cash to close with 20% down than with 5% down."
+   },
+   {
+    "big": "$820/mo",
+    "text": "lower payment with 20% down vs. 5% down."
+   }
+  ],
+  "disclaimer": "Estimates only, prepared 10/23/2026; not a loan approval or commitment to lend. $649,900 price, 30-year fixed conventional at 7.490% with no discount points (APR 7.786% with 5% down; 7.570% with 20% down). Payment = principal, interest, est. taxes ($1,029/mo), insurance ($400/mo) and mortgage insurance with 5% down ($139/mo); no HOA is listed for this property. Cash to close includes seller title credits of $3,497 (5% down) and $3,546 (20% down), which must be agreed in the contract and are subject to loan program limits. Actual rate, payment and costs could be higher; get an official Loan Estimate before choosing a loan. Devin Kampa is a loan officer, not a licensed real estate agent or Realtor, and this listing is exclusive to the listing Realtor or builder. Highlands Residential Mortgage, Ltd., NMLS #134871 (www.nmlsconsumeraccess.org). Equal Housing Lender."
+ },
+ "worksheets": {
+  "w5": "/mnt/user-data/attachments/f6b37099-f94b-51b2-acfc-3d89f62f3642/ff4dcbcf-8630_Rolling_Rock_Ln_FOLDER_EXAMPLE_95LTV_10.23.26.pdf",
+  "w20": "/mnt/user-data/attachments/f6b37099-f94b-51b2-acfc-3d89f62f3642/560d75c3-8630_Rolling_Rock_Ln_FOLDER_EXAMPLE_80LTV_10.23.26.pdf"
+ },
+ "folder": {
+  "home_caption": "Four bedrooms, four baths and 2,083 square feet of mid-century modern living, with a putting green and a back house with its own bath.",
+  "labels": {
+   "w5": "5% down",
+   "w20": "20% down"
+  }
+ },
+ "neighborhood": {
+  "center": [
+   32.866523,
+   -96.692631
+  ],
+  "ring_dir": "ne",
+  "pos_a": "50% 60%",
+  "pos_b": "50% 50%",
+  "pois": [
+   {
+    "id": 1,
+    "kind": "park",
+    "name": "Norbuck Park",
+    "dist": "1.4 mi",
+    "desc": "100-acre park with trails, courts and fields",
+    "pin_px": [
+     161,
+     328
+    ]
+   },
+   {
+    "id": 2,
+    "kind": "park",
+    "name": "Flag Pole Hill Park",
+    "dist": "1.8 mi",
+    "desc": "Hilltop pavilion, trail and playground",
+    "pin_px": [
+     115,
+     300
+    ]
+   },
+   {
+    "id": 3,
+    "kind": "park",
+    "name": "White Rock Lake Park",
+    "dist": "2.4 mi",
+    "desc": "Lakeside trails and picnic areas",
+    "pin_px": [
+     150,
+     450
+    ]
+   },
+   {
+    "id": 4,
+    "kind": "shop",
+    "name": "Sprouts Farmers Market",
+    "dist": "2.3 mi",
+    "desc": "Grocery at Skillman and Walnut Hill",
+    "pin_px": [
+     75,
+     198
+    ]
+   },
+   {
+    "id": 5,
+    "kind": "shop",
+    "name": "Tom Thumb",
+    "lat": 32.896138,
+    "lon": -96.720444,
+    "desc": "Full grocery and pharmacy on Skillman"
+   },
+   {
+    "id": 6,
+    "kind": "eat",
+    "name": "Resident Taqueria",
+    "dist": "1.6 mi",
+    "desc": "Michelin-recognized tacos, Lakeridge Village",
+    "pin_px": [
+     146,
+     214
+    ]
+   },
+   {
+    "id": 7,
+    "kind": "eat",
+    "name": "Vector Brewing",
+    "dist": "1.6 mi",
+    "desc": "Brewpub with pizza and a kids' play area",
+    "pin_px": [
+     166,
+     196
+    ]
+   },
+   {
+    "id": 8,
+    "kind": "eat",
+    "name": "Goldie's",
+    "dist": "1.6 mi",
+    "desc": "Bistro and happy hour at Lakeridge Village",
+    "pin_px": [
+     126,
+     196
+    ]
+   }
+  ],
+  "community": "Lakeland Hills is one of Dallas' best-known mid-century modern neighborhoods, a Lake Highlands pocket of low-slung ranch homes and mature trees. White Rock Creek's trails and Flag Pole Hill Park are a short drive away, and Lakeridge Village adds a brewery, a bistro and Michelin-recognized tacos. Richardson ISD schools serve the home.",
+  "drive_times": [
+   [
+    "I-635",
+    "~5 min"
+   ],
+   [
+    "Lake Highlands High",
+    "~7 min"
+   ],
+   [
+    "White Rock Lake",
+    "~8 min"
+   ],
+   [
+    "US 75",
+    "~12 min"
+   ],
+   [
+    "Downtown Dallas",
+    "~20 min"
+   ],
+   [
+    "DFW Airport",
+    "~30 min"
+   ]
+  ]
+ }
+}
