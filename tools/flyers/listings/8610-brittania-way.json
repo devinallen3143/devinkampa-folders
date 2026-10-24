@@ -1,0 +1,228 @@
+{
+ "address": "8610 Brittania Way, Dallas, TX 75243",
+ "price": "$425,000",
+ "facts": "4 BD · 4 BA · 2,124 SF",
+ "agent": {
+  "name": "Nyia Njamfa",
+  "title": "REALTOR® · GRI",
+  "brokerage": "Allie Beth Allman & Associates",
+  "phone": "214-494-9433",
+  "email": "nyia@northtexashomes.com",
+  "web": "northtexashomes.com",
+  "card": "card-candlelite.jpg",
+  "logo": "logo-allie-beth-allman.png"
+ },
+ "photos": {
+  "hero": "front.png",
+  "big": "living.png",
+  "small": "deck.png",
+  "n1": "kitchen.png",
+  "n2": "bed.png",
+  "n3": "bath.png",
+  "na": "front.png",
+  "nb": "deck.png"
+ },
+ "home": {
+  "hero_pos": "50% 55%",
+  "bullets": [
+   "4 bedrooms · 4 baths",
+   "2,124 square feet, two stories",
+   "End-unit townhome, built 1993",
+   "Backs to a greenbelt",
+   "Eat-in kitchen, granite counters",
+   "Double oven, breakfast bar",
+   "Primary suite down, jetted tub",
+   "Fireplace, upstairs game room",
+   "2-car garage, deck and patio"
+  ],
+  "about": "An end-unit townhome in Dallas' Copperfield community, beside a large greenbelt. The living and dining areas open to an eat-in kitchen, and the first-floor primary suite opens to a private patio. Recent updates include HVAC, roof and fresh paint."
+ },
+ "numbers": {
+  "pos1": "50% 50%",
+  "pos2": "50% 50%",
+  "pos3": "50% 50%",
+  "cards": [
+   {
+    "eyebrow": "Lowest cash to close",
+    "l1": "5% down +",
+    "l2": "no discount points",
+    "pay": "$3,884",
+    "rows": [
+     [
+      "Down payment",
+      "$21,250"
+     ],
+     [
+      "Discount points",
+      "$0"
+     ],
+     [
+      "Seller title credit",
+      "−$2,386"
+     ]
+    ],
+    "cash": "$33,635"
+   },
+   {
+    "eyebrow": "Lowest monthly payment",
+    "l1": "20% down +",
+    "l2": "no discount points",
+    "pay": "$3,348",
+    "rows": [
+     [
+      "Down payment",
+      "$85,000"
+     ],
+     [
+      "Discount points",
+      "$0"
+     ],
+     [
+      "Seller title credit",
+      "−$2,386"
+     ]
+    ],
+    "cash": "$97,228"
+   }
+  ],
+  "deltas": [
+   {
+    "big": "$63,593",
+    "text": "more cash to close with 20% down than with 5% down."
+   },
+   {
+    "big": "$536/mo",
+    "text": "lower payment with 20% down vs. 5% down."
+   }
+  ],
+  "disclaimer": "Estimates only, prepared 10/24/2026; not a loan approval or commitment to lend. $425,000 price, 30-year fixed conventional at 7.490% with no discount points (APR 7.810% with 5% down; 7.599% with 20% down). Payment = principal, interest, est. taxes ($673/mo), insurance ($300/mo) and mortgage insurance with 5% down ($91/mo); HOA ($434/mo) not included. Cash to close includes a $2,386 seller title credit, which must be agreed in the contract and is subject to loan program limits. Actual rate, payment and costs could be higher; get an official Loan Estimate before choosing a loan. Devin Kampa is a loan officer, not a licensed real estate agent or Realtor, and this listing is exclusive to the listing Realtor or builder. Highlands Residential Mortgage, Ltd., NMLS #134871 (www.nmlsconsumeraccess.org). Equal Housing Lender."
+ },
+ "worksheets": {
+  "w5": "/mnt/user-data/attachments/f6b37099-f94b-51b2-acfc-3d89f62f3642/95ad47fc-8610_Brittania_Way_FOLDER_EXAMPLE_80LTV_10.24.26.pdf",
+  "w20": "/mnt/user-data/attachments/f6b37099-f94b-51b2-acfc-3d89f62f3642/a343a889-8610_Brittania_Way_FOLDER_EXAMPLE_80LTV_10.24.26_2.pdf"
+ },
+ "folder": {
+  "home_caption": "Four bedrooms, four baths and 2,124 square feet in an end-unit townhome that backs to a greenbelt, with a first-floor primary suite.",
+  "labels": {
+   "w5": "5% down",
+   "w20": "20% down"
+  }
+ },
+ "neighborhood": {
+  "center": [
+   32.8965,
+   -96.7258
+  ],
+  "ring_dir": "ne",
+  "pos_a": "50% 55%",
+  "pos_b": "50% 50%",
+  "pois": [
+   {
+    "id": 1,
+    "kind": "park",
+    "name": "White Rock Trail",
+    "dist": "0.4 mi",
+    "desc": "Multi-use trail along the rail corridor",
+    "pin_px": [
+     236,
+     308
+    ]
+   },
+   {
+    "id": 2,
+    "kind": "park",
+    "name": "Walne Park",
+    "dist": "0.6 mi",
+    "desc": "Pool, playground, tennis and rec center",
+    "pin_px": [
+     271,
+     333
+    ]
+   },
+   {
+    "id": 3,
+    "kind": "park",
+    "name": "White Rock Lake Park",
+    "dist": "~3 mi",
+    "desc": "Lakeside trails and picnic areas",
+    "nopin": true
+   },
+   {
+    "id": 4,
+    "kind": "shop",
+    "name": "Tom Thumb",
+    "lat": 32.896138,
+    "lon": -96.720444,
+    "desc": "Full grocery and pharmacy on Skillman"
+   },
+   {
+    "id": 5,
+    "kind": "shop",
+    "name": "Sprouts Farmers Market",
+    "lat": 32.8788,
+    "lon": -96.7302,
+    "desc": "Grocery at Skillman and Walnut Hill"
+   },
+   {
+    "id": 6,
+    "kind": "eat",
+    "name": "Resident Taqueria",
+    "dist": "1.1 mi",
+    "desc": "Michelin-recognized tacos, Lakeridge Village",
+    "pin_px": [
+     330,
+     193
+    ]
+   },
+   {
+    "id": 7,
+    "kind": "eat",
+    "name": "Vector Brewing",
+    "dist": "1.1 mi",
+    "desc": "Brewpub with pizza and a kids' play area",
+    "pin_px": [
+     348,
+     177
+    ]
+   },
+   {
+    "id": 8,
+    "kind": "eat",
+    "name": "Goldie's",
+    "dist": "1.1 mi",
+    "desc": "Bistro and happy hour at Lakeridge Village",
+    "pin_px": [
+     312,
+     177
+    ]
+   }
+  ],
+  "community": "Copperfield is a Lake Highlands townhome community set beside a greenbelt and creek, with a community pool, a clubhouse and walking paths. Walne Park and the White Rock Trail are minutes away, and Lakeridge Village adds a brewery, a bistro and Michelin-recognized tacos. Richardson ISD schools serve the home.",
+  "drive_times": [
+   [
+    "I-635",
+    "~3 min"
+   ],
+   [
+    "Walnut Hill Lane",
+    "~5 min"
+   ],
+   [
+    "US 75",
+    "~10 min"
+   ],
+   [
+    "White Rock Lake",
+    "~10 min"
+   ],
+   [
+    "Downtown Dallas",
+    "~20 min"
+   ],
+   [
+    "DFW Airport",
+    "~25 min"
+   ]
+  ]
+ }
+}
