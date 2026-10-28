@@ -1,0 +1,68 @@
+{
+ "address": "1460 Latigo Ct, Prosper, TX 75078",
+ "photos": {"hero":"p02.png","n1":"p12.png","n2":"p13.png","m1":"p07.png"},
+ "photo_side_names": {"a":"The Home","b":"Outdoors & Retreats"},
+ "photo_sides": {
+  "a":[{"f":"p02.png"},{"f":"p03.png"},{"f":"p04.png"},{"f":"p05.png"},{"f":"p06.png"},{"f":"p07.png"}],
+  "b":[{"f":"p12.png"},{"f":"p10.png"},{"f":"p09.png"},{"f":"p14.png"},{"f":"p11.png"},{"f":"p13.png"}]
+ },
+ "home": {
+  "eyebrow": "Saddle Creek · Prosper, Texas",
+  "hero_pos": "50% 60%",
+  "facts": [["6","Bedrooms"],["5.5","Baths"],["5,854","Sq Ft"],["0.44","Acre"]],
+  "about": "Stone and brick, a turret, and a gated porte-cochère set the tone. Inside, a double staircase, hardwood floors and a great room under beamed ceilings open to the pool.",
+  "bullets": [
+   "Primary suite on the main level",
+   "Chef's kitchen, brass hood, island",
+   "Butler's pantry and prep kitchen",
+   "Theater room with tiered seating",
+   "Pool with water features, gazebo lawn",
+   "Walk-in closet with built-ins",
+   "Three-car garage, built in 2018",
+   "Prosper ISD, $70 annual HOA"
+  ]
+ },
+ "neighborhood": {
+  "eyebrow": "Saddle Creek · Prosper, Texas",
+  "community": "Saddle Creek is a quiet, established Prosper neighborhood on the Preston Road corridor, with Kroger and the Saddle Creek Plaza shops at the corner of Preston and Prosper Trail, and Prosper ISD schools nearby.",
+  "parks": [
+   ["Frontier Park","1551 W. Frontier Pkwy · rental spaces, batting cages",""],
+   ["Raymond Community Park","Coit Rd &amp; First St · nature trail",""],
+   ["Preston Lakes Park","775 Bridgeport Dr",""],
+   ["Hays Park","9008 Preston View Dr · 2 acres",""]
+  ],
+  "errands": [
+   ["Kroger Marketplace","Groceries · Preston &amp; Prosper Trail","0.4 mi"],
+   ["Kroger","Groceries and pharmacy","0.3 mi"],
+   ["Walmart Supercenter","Everyday needs","2.1 mi"],
+   ["Target","Home and household","2.3 mi"],
+   ["Sprouts Farmers Market","Fresh market","4.5 mi"]
+  ],
+  "eat": [
+   ["Salute Italian Restaurant","1450 N. Preston Rd · handmade pasta",""],
+   ["Urban Cookhouse","The Gates of Prosper · from-scratch grill",""],
+   ["Hana Hibachi &amp; Sushi","Downtown Prosper · sushi and teppanyaki",""]
+  ],
+  "drive_times": [["The Gates of Prosper","10 min"],["Downtown Prosper","10 min"],["The Star, Frisco","20 min"],["Downtown McKinney","20 min"],["Legacy West, Plano","25 min"],["DFW Airport","40 min"]],
+  "note": "Distances to Kroger, Walmart, Target and Sprouts are measured from Saddle Creek Plaza (Preston Rd &amp; Prosper Trail), the neighborhood's shopping center. Drive times are approximate and vary with traffic. School zoning changes; confirm with Prosper ISD. Sources: Town of Prosper park list; CommercialSearch; Independence Title, Discover Prosper."
+ },
+ "movein": {
+  "eyebrow": "Your first week at 1460 Latigo Ct.",
+  "pos": "50% 45%",
+  "intro": "Water and trash are set up with the Town of Prosper. Electricity, gas, and internet are your choice of provider. Start these a week or two ahead so everything is on the day you get the keys.",
+  "setup": [
+   ["Water, wastewater &amp; trash","Town of Prosper","Start online or at Town Hall, 250 W. First St. 972-569-1180","Online or in person"],
+   ["Electricity","Oncor delivers · choose a provider","Confirm your provider for this address: Oncor 866-797-4839 or CoServ 800-274-4017","Pick a provider"],
+   ["Natural gas","Atmos Energy","866-322-8667 · set a start date for the house","866-322-8667"],
+   ["Internet","AT&amp;T Fiber (if available at address)","300 Mbps $50 · 500 Mbps $60 · 1 Gig $70 per month, after autopay discount","Up to $99"]
+  ],
+  "monthly": [
+   ["Electricity","Large home with pool","Estimate for roughly 5,800 sq ft with pool equipment. Summer runs highest.","$450 to $750"],
+   ["Natural gas","Heat, water heating, grill","Estimate. Winter runs highest.","$90 to $220"],
+   ["Water, sewer &amp; irrigation","Town of Prosper","Estimate for a 0.44-acre lot with sprinklers. Rates rose in fall 2025.","$250 to $500"],
+   ["Pool service","Weekly service","Typical North Texas range for a pool with water features.","$150 to $250"],
+   ["HOA","Saddle Creek","Annual dues per public record.","$70 / year"]
+  ],
+  "note": "Estimates only, not quotes. Electricity, water and pool figures are scaled to home size and typical North Texas ranges; actual costs depend on usage, provider and plan. Provider details from the Town of Prosper Utility Service page and AT&amp;T Fiber (Prosper); HOA and size from public records. Verify with each provider before you move in."
+ }
+}
