@@ -77,6 +77,14 @@ rep("(it.type==='tri'?[it.out,it.inn]:[it.key])", "(it.type==='tri'?[it.out,it.i
 rep("show('#flipB',exFocus&&sc.focus&&items[sc.focus].type==='tri');", "show('#flipB',exFocus&&sc.focus&&(items[sc.focus].type==='tri'||!!items[sc.focus].back));")
 rep("a=items[cur.focus].type==='tri'?(f?ALT[cur.focus]:FOCUS_CAP[cur.focus]):null;", "a=(items[cur.focus].type==='tri'||items[cur.focus].back)?(f?ALT[cur.focus]:FOCUS_CAP[cur.focus]):null;")
 
+# ---- optional guided tour: Open goes straight to the finished folder; a prominent button starts the tour
+rep("function start(){ playing=true; go(1); }", "function start(){ playing=false; go(SC.length-1); }\nfunction tour(){ playing=true; go(1); }\n$('#tourB').onclick=tour;")
+rep("$('#replayB').onclick=()=>{ playing=true; go(2); };", "$('#replayB').onclick=tour;")
+rep("show('#replayB',done);", "show('#replayB',false);\n  show('#tourB',done&&!exFocus);")
+rep('<button class="btn primary" id="openB" type="button">Open the folder</button>', '<button class="btn primary" id="openB" type="button">Open the folder</button>\n      <button class="btn hide" id="tourB" type="button">Take the guided tour</button>')
+rep("""t:"That's the folder.",s:'Hover or tap anything to take a closer look.'""", """t:"Here's your folder.",s:'Tap any flyer to take a closer look, or let us walk you through it.'""")
+rep("(vw<640?236:(vh<520?88:132))", "(vw<640?300:(vh<520?150:196))")
+
 # ---- luxury look: black leather, brass-gold stitching, ivory stage
 LUX = """<style id="lux">
 :root{--bg1:#f6f1e7;--bg2:#f1ebdd;--bg3:#e9e1cf;--haze:rgba(246,241,231,.94);--ink:#14120e;--ink2:#6a6254;
@@ -85,14 +93,15 @@ LUX = """<style id="lux">
 .paperbg,.inner,.cb .inner{background:linear-gradient(165deg,#1b1a18 0%,#121110 55%,#0a0a09 100%)}
 .cf{background:linear-gradient(155deg,#201f1c 0%,#131211 48%,#080807 100%)}
 .pocket{background:linear-gradient(180deg,#232220 0%,#171615 40%,#0e0d0c 100%)}
-.stitch{border-color:#c6a04f;filter:drop-shadow(0 0 1.5px rgba(198,160,79,.4));box-shadow:0 0 0 1px rgba(0,0,0,.5)}
-.pocket i{border-color:#c6a04f}
+.stitch{border-color:#dfe3e8;filter:drop-shadow(0 0 1.5px rgba(223,227,232,.4));box-shadow:0 0 0 1px rgba(0,0,0,.5)}
+.pocket i{border-color:#dfe3e8}
 .cf .addr b{color:#f6efdc}.cf .addr span{color:#c6a04f}.cf .agname{color:rgba(198,160,79,.8)}
 #cap h1 .sharpie{color:#a8864a}
 .bc.ag{background:linear-gradient(135deg,#17150f,#0c0b09);color:#f3ecd9;box-shadow:inset 0 0 0 1px rgba(198,160,79,.5)}
 .bc.ag .bl2{color:#c6a04f}.bc.ag .bn{color:#fff}.bc.ag .br,.bc.ag .bm{color:#cfc6b0}.bc.ag .bp{color:#fff}.bc.ag .bp b{color:#c6a04f}
 .bc.ag .bph{background:#1f1d18;box-shadow:0 0 0 2px rgba(198,160,79,.55)}.bc.ag .bs{background:linear-gradient(180deg,#d9b866,#8f6f36)}
 #toast{background:#14120e;color:#e8cd8c}
+#tourB{min-height:52px;padding:0 32px;font-size:16px;font-weight:600;background:linear-gradient(135deg,#e2c16f 0%,#a8864a 100%);color:#14120e;border-color:transparent;box-shadow:0 6px 18px rgba(168,134,74,.4),inset 0 1px 0 rgba(255,255,255,.35)}
 #nudge{background:#fffcf5}
 #reader img{background:#f6f1e7}
 </style>

@@ -253,14 +253,15 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .paperbg,.inner,.cb .inner{background:linear-gradient(165deg,#1b1a18 0%,#121110 55%,#0a0a09 100%)}
 .cf{background:linear-gradient(155deg,#201f1c 0%,#131211 48%,#080807 100%)}
 .pocket{background:linear-gradient(180deg,#232220 0%,#171615 40%,#0e0d0c 100%)}
-.stitch{border-color:#c6a04f;filter:drop-shadow(0 0 1.5px rgba(198,160,79,.4));box-shadow:0 0 0 1px rgba(0,0,0,.5)}
-.pocket i{border-color:#c6a04f}
+.stitch{border-color:#dfe3e8;filter:drop-shadow(0 0 1.5px rgba(223,227,232,.4));box-shadow:0 0 0 1px rgba(0,0,0,.5)}
+.pocket i{border-color:#dfe3e8}
 .cf .addr b{color:#f6efdc}.cf .addr span{color:#c6a04f}.cf .agname{color:rgba(198,160,79,.8)}
 #cap h1 .sharpie{color:#a8864a}
 .bc.ag{background:linear-gradient(135deg,#17150f,#0c0b09);color:#f3ecd9;box-shadow:inset 0 0 0 1px rgba(198,160,79,.5)}
 .bc.ag .bl2{color:#c6a04f}.bc.ag .bn{color:#fff}.bc.ag .br,.bc.ag .bm{color:#cfc6b0}.bc.ag .bp{color:#fff}.bc.ag .bp b{color:#c6a04f}
 .bc.ag .bph{background:#1f1d18;box-shadow:0 0 0 2px rgba(198,160,79,.55)}.bc.ag .bs{background:linear-gradient(180deg,#d9b866,#8f6f36)}
 #toast{background:#14120e;color:#e8cd8c}
+#tourB{min-height:52px;padding:0 32px;font-size:16px;font-weight:600;background:linear-gradient(135deg,#e2c16f 0%,#a8864a 100%);color:#14120e;border-color:transparent;box-shadow:0 6px 18px rgba(168,134,74,.4),inset 0 1px 0 rgba(255,255,255,.35)}
 #nudge{background:#fffcf5}
 #reader img{background:#f6f1e7}
 </style>
@@ -318,6 +319,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
     <div class="txt" id="capTxt"><h1 id="capT"></h1><p id="capS"></p><p id="capX" class="capx"></p></div>
     <div id="cta">
       <button class="btn primary" id="openB" type="button">Open the folder</button>
+      <button class="btn hide" id="tourB" type="button">Take the guided tour</button>
       <div id="endcta" class="hide">
         <div class="two">
           <div class="cc"><h2>Want to take a real tour?</h2>
@@ -494,7 +496,7 @@ const SC=[
  {id:'move',focus:'move',dur:9,t:'Move-in costs',s:'What to set up before you arrive, and typical monthly costs, with providers and phone numbers.'},
  {id:'pics',focus:'pics',dur:7,t:'The home',s:'Front, foyer, dining room, great room, living room and kitchen.'},
  {id:'pics2',focus:'pics',flip:1,dur:7,t:'Outdoors and retreats',s:'The pool, primary suite and bath, theater, closet and backyard.'},
- {id:'done',open:1,cam:OV,explore:true,t:"That's the folder.",s:'Hover or tap anything to take a closer look.'}
+ {id:'done',open:1,cam:OV,explore:true,t:"Here's your folder.",s:'Tap any flyer to take a closer look, or let us walk you through it.'}
 ];
 const S=id=>SC.find(x=>x.id===id);
 const DOTIDS=['home','neigh','move','pics','pics2'];
@@ -513,7 +515,7 @@ function setPerspective(){ perspective=Math.round(Math.max(innerWidth,innerHeigh
 function capSpace(sc){
   const vw=innerWidth, vh=innerHeight, w=Math.min(vw*.92,680), fs=Math.min(17,Math.max(14,vw*.017)), tfs=Math.min(32,Math.max(22,vw*.031));
   const cpl=Math.floor(w/(fs*.5)), lines=Math.ceil((sc.s||'').length/cpl)+(sc.x?Math.ceil(sc.x.length/Math.floor(cpl*.88))*1.15+.5:0);
-  const cta=sc.explore?(vw<640?236:(vh<520?88:132)):((sc.id==='closed'||sc.id==='card')?62:0);
+  const cta=sc.explore?(vw<640?300:(vh<520?150:196)):((sc.id==='closed'||sc.id==='card')?62:0);
   return Math.round((vw<640?78:84)+tfs*1.12+8+lines*fs*1.4+cta+18)-((vw<640&&sc.id==='closed')?62:0);
 }
 function applyCam(sc,ms){
@@ -588,7 +590,8 @@ function ui(sc){
   show('#endcta',done&&!exFocus);
   show('#bar',pres);
   show('#skipB',pres);
-  show('#replayB',done);
+  show('#replayB',false);
+  show('#tourB',done&&!exFocus);
   show('#shutB',done&&!exFocus);
   show('#closeB',exFocus);
   show('#fullB',(pres&&!!sc.focus)||(exFocus&&sc.id!=='card'&&sc.id!=='acard'));
@@ -622,14 +625,16 @@ function go(i,instant){
   setPP();
 }
 function setPP(){ $('#ppI').innerHTML=playing?'<path d="M8 5v14M16 5v14"/>':'<path d="M7 4.5v15l12-7.5z"/>'; $('#ppB').setAttribute('aria-label',playing?'Pause':'Play'); }
-function start(){ playing=true; go(1); }
+function start(){ playing=false; go(SC.length-1); }
+function tour(){ playing=true; go(1); }
+$('#tourB').onclick=tour;
 $('#openB').onclick=start;
 $('#coverFront').addEventListener('click',()=>{ if(idx===0) start(); });
 $('#nextB').onclick=()=>{ go(idx+1); };
 $('#prevB').onclick=()=>{ go(Math.max(1,idx-1)); };
 $('#ppB').onclick=()=>{ playing=!playing; clearTimeout(timer); setPP(); if(playing&&SC[idx].dur) timer=setTimeout(()=>go(idx+1),SC[idx].dur*1000*SEQ); };
 $('#skipB').onclick=()=>{ playing=false; go(SC.length-1); };
-$('#replayB').onclick=()=>{ playing=true; go(2); };
+$('#replayB').onclick=tour;
 $('#shutB').onclick=()=>{ playing=false; go(0); };
 
 /* ---------- explore ---------- */
