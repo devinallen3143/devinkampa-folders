@@ -14,6 +14,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('slug'); ap.add_argument('flyers')
 ap.add_argument('--street', required=True); ap.add_argument('--city', required=True); ap.add_argument('--full', required=True)
 ap.add_argument('--home-line', required=True)
+ap.add_argument('--home-pitch', required=True); ap.add_argument('--neigh-pitch', required=True)
 ap.add_argument('--base', default='4824-cedar-creek-dr-v2')
 a = ap.parse_args()
 
@@ -77,6 +78,12 @@ rep("(it.type==='tri'?[it.out,it.inn]:[it.key])", "(it.type==='tri'?[it.out,it.i
 rep("show('#flipB',exFocus&&sc.focus&&items[sc.focus].type==='tri');", "show('#flipB',exFocus&&sc.focus&&(items[sc.focus].type==='tri'||!!items[sc.focus].back));")
 rep("a=items[cur.focus].type==='tri'?(f?ALT[cur.focus]:FOCUS_CAP[cur.focus]):null;", "a=(items[cur.focus].type==='tri'||items[cur.focus].back)?(f?ALT[cur.focus]:FOCUS_CAP[cur.focus]):null;")
 
+# ---- sales-style captions for the two highlight flyers (the factual sheets stay literal)
+import re as _re
+s = _re.sub(r"\{id:'home',focus:'home',dur:7\.5,t:'Home highlights',s:'[^']*'\}", "{id:'home',focus:'home',dur:7.5,t:'Room for everything you love',s:'" + a.home_pitch + "'}", s)
+s = _re.sub(r"\{id:'neigh',focus:'neigh',dur:8\.5,t:'Neighborhood highlights',s:'[^']*'\}", "{id:'neigh',focus:'neigh',dur:8.5,t:'Everyday life, close by',s:'" + a.neigh_pitch + "'}", s)
+assert 'Room for everything' in s and 'Everyday life' in s
+
 # ---- optional guided tour: Open goes straight to the finished folder; a prominent button starts the tour
 rep("function start(){ playing=true; go(1); }", "function start(){ playing=false; go(SC.length-1); }\nfunction tour(){ playing=true; go(1); }\n$('#tourB').onclick=tour;")
 rep("$('#replayB').onclick=()=>{ playing=true; go(2); };", "$('#replayB').onclick=tour;")
@@ -93,8 +100,8 @@ LUX = """<style id="lux">
 .paperbg,.inner,.cb .inner{background:linear-gradient(165deg,#1b1a18 0%,#121110 55%,#0a0a09 100%)}
 .cf{background:linear-gradient(155deg,#201f1c 0%,#131211 48%,#080807 100%)}
 .pocket{background:linear-gradient(180deg,#232220 0%,#171615 40%,#0e0d0c 100%)}
-.stitch{border-color:#dfe3e8;filter:drop-shadow(0 0 1.5px rgba(223,227,232,.4));box-shadow:0 0 0 1px rgba(0,0,0,.5)}
-.pocket i{border-color:#dfe3e8}
+.stitch{border-color:#d6b361;filter:drop-shadow(0 0 2px rgba(226,193,111,.5));box-shadow:0 0 0 1px rgba(0,0,0,.5)}
+.pocket i{border-color:#d6b361}
 .cf .addr b{color:#f6efdc}.cf .addr span{color:#c6a04f}.cf .agname{color:rgba(198,160,79,.8)}
 #cap h1 .sharpie{color:#a8864a}
 .bc.ag{background:linear-gradient(135deg,#17150f,#0c0b09);color:#f3ecd9;box-shadow:inset 0 0 0 1px rgba(198,160,79,.5)}
