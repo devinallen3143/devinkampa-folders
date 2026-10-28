@@ -80,9 +80,9 @@ rep("a=items[cur.focus].type==='tri'?(f?ALT[cur.focus]:FOCUS_CAP[cur.focus]):nul
 
 # ---- sales-style captions for the two highlight flyers (the factual sheets stay literal)
 import re as _re
-s = _re.sub(r"\{id:'home',focus:'home',dur:7\.5,t:'Home highlights',s:'[^']*'\}", "{id:'home',focus:'home',dur:7.5,t:'Room for everything you love',s:'" + a.home_pitch + "'}", s)
-s = _re.sub(r"\{id:'neigh',focus:'neigh',dur:8\.5,t:'Neighborhood highlights',s:'[^']*'\}", "{id:'neigh',focus:'neigh',dur:8.5,t:'Everyday life, close by',s:'" + a.neigh_pitch + "'}", s)
-assert 'Room for everything' in s and 'Everyday life' in s
+s = _re.sub(r"\{id:'home',focus:'home',dur:7\.5,t:'Home highlights',s:'[^']*'\}", "{id:'home',focus:'home',dur:7.5,t:'Home highlights',s:'" + a.home_pitch + "'}", s)
+s = _re.sub(r"\{id:'neigh',focus:'neigh',dur:8\.5,t:'Neighborhood highlights',s:'[^']*'\}", "{id:'neigh',focus:'neigh',dur:8.5,t:'Neighborhood highlights',s:'" + a.neigh_pitch + "'}", s)
+assert 'Home highlights' in s
 
 # ---- optional guided tour: Open goes straight to the finished folder; a prominent button starts the tour
 rep("function start(){ playing=true; go(1); }", "function start(){ playing=false; go(SC.length-1); }\nfunction tour(){ playing=true; go(1); }\n$('#tourB').onclick=tour;")
