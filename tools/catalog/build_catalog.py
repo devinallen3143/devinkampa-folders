@@ -6,14 +6,6 @@ L=[ # slug, address, city, beds, style, order
 ("Terra","4148 Hollow Oak Dr","Dallas",2,"Example"),
 ("Evergreen","7241 Cliffbrook Dr","Dallas",5,"Example"),
 ("8610-brittania-way","8610 Brittania Way","Dallas",4,"Standard"),
-("8630-rolling-rock-ln","8630 Rolling Rock Ln","Dallas",4,"Standard"),
-("113-candlelite-trl","113 Candlelite Trl","Heath",4,"Standard"),
-("1429-macrae-ct","1429 Macrae Ct","Allen",3,"Standard"),
-("1008-10th-st","1008 10th St","Argyle",3,"Standard"),
-("4824-cedar-creek-dr","4824 Cedar Creek Dr","McKinney",4,"Standard"),
-("1001-lake-cypress-ln","1001 Lake Cypress Ln","Little Elm",4,"Standard"),
-("2388-greymoore-dr","2388 Greymoore Dr","Frisco",4,"Standard"),
-("1108-salado-dr","1108 Salado Dr","Allen",5,"Standard"),
 ]
 mode=sys.argv[1]  # repo | preview
 def img(p):
