@@ -1,0 +1,205 @@
+{
+ "address": "1902 Lilac Ct, Richardson, TX 75080",
+ "price": "$799,000",
+ "facts": "4 BD · 3.5 BA · 2,939 SF",
+ "photos": {
+  "hero": "front.png",
+  "big": "patio.png",
+  "small": "kitchen.png",
+  "n1": "pool.png",
+  "n2": "living.png",
+  "n3": "bath.png",
+  "na": "front.png",
+  "nb": "pool.png"
+ },
+ "home": {
+  "hero_pos": "50% 55%",
+  "big_pos": "50% 60%",
+  "small_pos": "50% 50%",
+  "bullets": [
+   "4 bedrooms, primary suite downstairs",
+   "Vaulted great room, brick fireplace",
+   "Double ovens, gas range, pot filler",
+   "Butcher block counters, cedar bar",
+   "New plank flooring and new windows",
+   "New French doors to the pool",
+   "Covered patio, fireplace and heaters",
+   "Built-in grill, beverage fridge, TV niche",
+   "Quiet cul-de-sac, 0.24 acre, built 1983"
+  ],
+  "about": "A two-story Richardson home on a quiet cul-de-sac, with a first-floor primary suite, a kitchen built for cooking and a backyard made for entertaining: pool, covered patio with fireplace and heaters, and a built-in grill."
+ },
+ "numbers": {
+  "pos1": "50% 55%",
+  "pos2": "50% 50%",
+  "pos3": "50% 50%",
+  "cards": [
+   {
+    "eyebrow": "Lowest cash to close",
+    "l1": "5% down",
+    "l2": "95% LTV",
+    "pay": "$7,144",
+    "rows": [
+     [
+      "Down payment",
+      "$39,950"
+     ],
+     [
+      "Closing costs, prepaids & escrow",
+      "$19,836"
+     ],
+     [
+      "Seller title credit",
+      "−$4,233"
+     ]
+    ],
+    "cash": "$55,553"
+   },
+   {
+    "eyebrow": "Lowest monthly payment",
+    "l1": "20% down",
+    "l2": "80% LTV",
+    "pay": "$6,130",
+    "rows": [
+     [
+      "Down payment",
+      "$159,800"
+     ],
+     [
+      "Closing costs, prepaids & escrow",
+      "$19,516"
+     ],
+     [
+      "Seller title credit",
+      "−$4,233"
+     ]
+    ],
+    "cash": "$175,083"
+   }
+  ],
+  "deltas": [
+   {
+    "big": "$119,531",
+    "text": "more cash to close with 20% down than with 5% down."
+   },
+   {
+    "big": "$1,014/mo",
+    "text": "lower payment with 20% down vs. 5% down."
+   }
+  ],
+  "disclaimer": "Example figures, prepared 11/21/2026; estimates only, not a loan approval or commitment to lend. $799,000 price, 30-year fixed conventional at 7.490% (APR 7.718%) with 5% down and at 7.375% (APR 7.444%) with 20% down. Payment = principal, interest, est. taxes ($1,265/mo), insurance ($450/mo) and mortgage insurance with 5% down ($127/mo). Cash to close includes down payment, est. closing costs, prepaid items and escrow reserves, less a $4,233 seller title credit, which must be agreed in the contract and is subject to loan program limits. Actual rate, payment and costs could be higher; get an official Loan Estimate before choosing a loan. Devin Kampa is a loan officer, not a licensed real estate agent or Realtor, and this listing is exclusive to the listing Realtor or builder. Highlands Residential Mortgage, Ltd., NMLS #134871 (www.nmlsconsumeraccess.org). Equal Housing Lender."
+ },
+ "worksheets": {
+  "w5": "/mnt/user-data/uploads/29ab0eb4-1902_Lilac_Ct_EXAMPLE_95LTV_11.21.pdf",
+  "w20": "/mnt/user-data/uploads/28b72eed-1902_Lilac_Ct_EXAMPLE_80LTV_11.21.pdf"
+ },
+ "folder": {
+  "home_caption": "Four bedrooms with the primary suite downstairs, a vaulted great room, a remodeled kitchen and a pool with a covered outdoor living area.",
+  "labels": {
+   "w5": "5% down",
+   "w20": "20% down"
+  }
+ },
+ "neighborhood": {
+  "center": [
+   32.97751,
+   -96.758459
+  ],
+  "ring_dir": "ne",
+  "pos_a": "50% 55%",
+  "pos_b": "50% 60%",
+  "pois": [
+   {
+    "id": 1,
+    "kind": "park",
+    "name": "Mimosa Park",
+    "desc": "Neighborhood park with open green space",
+    "lat": 32.967789,
+    "lon": -96.761677
+   },
+   {
+    "id": 2,
+    "kind": "park",
+    "name": "Cottonwood Park",
+    "desc": "25-acre park on W Belt Line Rd",
+    "dist": "~2.3 mi",
+    "nopin": true
+   },
+   {
+    "id": 3,
+    "kind": "park",
+    "name": "Heights Park",
+    "desc": "Aquatic center, sports fields and rec center",
+    "dist": "~1.7 mi",
+    "nopin": true
+   },
+   {
+    "id": 4,
+    "kind": "shop",
+    "name": "Tom Thumb",
+    "desc": "Full grocery at Coit and Campbell",
+    "lat": 32.97922,
+    "lon": -96.764359
+   },
+   {
+    "id": 5,
+    "kind": "shop",
+    "name": "Sprouts Farmers Market",
+    "desc": "Fresh grocery at Coit and Campbell",
+    "lat": 32.976916,
+    "lon": -96.765068
+   },
+   {
+    "id": 6,
+    "kind": "eat",
+    "name": "Hawaiian Bros Island Grill",
+    "desc": "Island plates on N Coit Rd",
+    "lat": 32.97922,
+    "lon": -96.768115
+   },
+   {
+    "id": 7,
+    "kind": "eat",
+    "name": "Asian Mint",
+    "desc": "Thai at 300 W Campbell Rd",
+    "lat": 32.9757,
+    "lon": -96.726
+   },
+   {
+    "id": 8,
+    "kind": "eat",
+    "name": "Bambu",
+    "desc": "Thai at 1930 N Coit Rd",
+    "lat": 32.97805,
+    "lon": -96.768007
+   }
+  ],
+  "community": "J.J. Pearce Addition is a quiet, tree-lined Richardson neighborhood of cul-de-sacs, zoned to Richardson ISD: Mohawk Elementary, Richardson North Junior High and J.J. Pearce High (confirm with the district). Mimosa Park is close by, and groceries, coffee and dinner are a short drive at Coit and Campbell.",
+  "drive_times": [
+   [
+    "US 75",
+    "~6 min"
+   ],
+   [
+    "Mohawk Elementary",
+    "~3 min"
+   ],
+   [
+    "UT Dallas",
+    "~6 min"
+   ],
+   [
+    "Legacy West",
+    "~20 min"
+   ],
+   [
+    "Downtown Dallas",
+    "~25 min"
+   ],
+   [
+    "DFW Airport",
+    "~30 min"
+   ]
+  ]
+ }
+}
