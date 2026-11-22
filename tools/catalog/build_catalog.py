@@ -1,6 +1,10 @@
 import base64, json, sys
 L=[ # slug, address, city, beds, style, order
 ("1460-latigo-ct","1460 Latigo Ct","Prosper",6,"Luxury"),
+("Heirloom","1902 Lilac Ct","Richardson",4,"Example"),
+("Azure","7707 La Avenida Dr","Dallas",3,"Example"),
+("Terra","4148 Hollow Oak Dr","Dallas",2,"Example"),
+("Evergreen","7241 Cliffbrook Dr","Dallas",5,"Example"),
 ("8610-brittania-way","8610 Brittania Way","Dallas",4,"Standard"),
 ("8630-rolling-rock-ln","8630 Rolling Rock Ln","Dallas",4,"Standard"),
 ("113-candlelite-trl","113 Candlelite Trl","Heath",4,"Standard"),
@@ -17,7 +21,8 @@ def img(p):
     ext=p.split('.')[-1]; mime='image/webp' if ext=='webp' else 'image/png'
     return f"data:{mime};base64,"+base64.b64encode(open('site/'+p,'rb').read()).decode()
 def link(s): return f"https://devinkampa.com/folder/{s}/"
+TH={'Heirloom':'1902-lilac-ct','Azure':'7707-la-avenida-dr','Terra':'4148-hollow-oak-dr','Evergreen':'7241-cliffbrook-dr'}
 CR={"1108-salado-dr","2388-greymoore-dr","4824-cedar-creek-dr"}
-data=[dict(slug=s,addr=a,city=c,beds=b,credit=(s in CR),img=img(f'thumbs/{s}.webp'),href=link(s)) for s,a,c,b,st in L]
+data=[dict(slug=s,addr=a,city=c,beds=b,credit=(s in CR),img=img('thumbs/'+TH.get(s,s)+'.webp'),href=link(s)) for s,a,c,b,st in L]
 html=open('template.html').read().replace('__DATA__',json.dumps(data)).replace('__LOGO__',img('highlands-logo.png'))
 open(f'site/index.html' if mode=='repo' else 'preview.html','w').write(html)
